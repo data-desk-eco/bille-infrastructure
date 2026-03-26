@@ -1,0 +1,241 @@
+<!doctype html>
+<notebook theme="midnight">
+  <title>Oil and gas infrastructure near Bille, Nigeria</title>
+
+  <script id="last_updated" type="module" hidden>
+    const lastUpdated = await FileAttachment("../data/last_updated.json").json();
+    const commitDate = new Date(lastUpdated.date);
+    const dateText = commitDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+  </script>
+
+  <script id="header" type="text/markdown">
+    # Oil and gas infrastructure near Bille, Nigeria
+    *${dateText}*
+
+    Oil and gas pipelines and oil spill incidents around Bille, OML 18, Rivers State, Niger Delta. Pipeline data from [MapStand](https://app.mapstand.com/), spill data from [NOSDRA](https://oilspillmonitor.ng/).
+  </script>
+
+  <script id="load_maplibre" type="module" hidden>
+    const maplibregl = await import("maplibre-gl");
+  </script>
+
+  <script id="maplibre_css" type="text/html">
+    <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.21.1/dist/maplibre-gl.css" />
+  </script>
+
+  <script id="load_data" type="module" hidden>
+    const pipelines = await FileAttachment("../data/pipelines.geojson").json();
+    const locations = await FileAttachment("../data/locations.geojson").json();
+    const spills = await FileAttachment("../data/spills.json").json();
+  </script>
+
+  <script id="show_spills" type="module" hidden>
+    const showSpills = view(Inputs.toggle({label: "Show oil spills", value: true}));
+  </script>
+
+  <script id="map_styles" type="text/html">
+    <style>
+      .maplibregl-map { font-family: inherit; }
+      .maplibregl-popup-content {
+        background: #1a1a1a;
+        color: #e0e0e0;
+        border-radius: 4px;
+        padding: 8px 12px;
+        font-size: 12px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+      }
+      .maplibregl-popup-content b { color: #f0c808; }
+      .maplibregl-popup-tip { border-top-color: #1a1a1a; }
+      .maplibregl-popup-anchor-bottom .maplibregl-popup-tip { border-top-color: #1a1a1a; }
+      .maplibregl-popup-anchor-top .maplibregl-popup-tip { border-bottom-color: #1a1a1a; }
+      .maplibregl-popup-anchor-left .maplibregl-popup-tip { border-right-color: #1a1a1a; }
+      .maplibregl-popup-anchor-right .maplibregl-popup-tip { border-left-color: #1a1a1a; }
+      .map-container {
+        width: 100%;
+        height: 750px;
+        border-radius: 4px;
+        overflow: hidden;
+      }
+      .legend {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        font-size: 13px;
+        margin-top: 4px;
+        color: #aaa;
+      }
+      .legend-line {
+        display: inline-block;
+        width: 20px;
+        height: 3px;
+        vertical-align: middle;
+        margin-right: 4px;
+      }
+      .legend-line--gas { background: #e45756; }
+      .legend-line--oil { background: #999; }
+      .legend-dot {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        vertical-align: middle;
+        margin-right: 4px;
+      }
+      .legend-dot--spill { background: #ff6b35; opacity: 0.6; }
+      .legend-dot--location { background: #f0c808; }
+      .legend-dot--bille { background: #ff4136; }
+    </style>
+  </script>
+
+  <script id="legend" type="text/html">
+    <div class="legend">
+      <span><span class="legend-line legend-line--gas"></span> Gas pipeline</span>
+      <span><span class="legend-line legend-line--oil"></span> Oil pipeline</span>
+      <span><span class="legend-dot legend-dot--spill"></span> Oil spill (NOSDRA)</span>
+      <span><span class="legend-dot legend-dot--location"></span> Key location</span>
+      <span><span class="legend-dot legend-dot--bille"></span> Bille Town</span>
+    </div>
+  </script>
+
+  <script id="map" type="module">
+    const spillsGeoJSON = {
+      type: "FeatureCollection",
+      features: spills.map(s => ({
+        type: "Feature",
+        geometry: {type: "Point", coordinates: [s.lon, s.lat]},
+        properties: s
+      }))
+    };
+
+    const div = display(html`<div class="map-container"></div>`);
+
+    const map = new maplibregl.Map({
+      container: div,
+      style: {
+        version: 8,
+        sources: {
+          satellite: {
+            type: "raster",
+            tiles: ["https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"],
+            tileSize: 256,
+            attribution: "Esri"
+          }
+        },
+        layers: [{
+          id: "satellite",
+          type: "raster",
+          source: "satellite",
+          paint: {
+            "raster-saturation": -1,
+            "raster-brightness-max": 0.55,
+            "raster-contrast": 0.15
+          }
+        }]
+      },
+      center: [6.8888, 4.5763],
+      zoom: 11,
+      maxZoom: 16
+    });
+
+    map.addControl(new maplibregl.NavigationControl(), "top-right");
+
+    map.on("load", () => {
+      map.addSource("pipelines", {type: "geojson", data: pipelines});
+      map.addSource("spills", {type: "geojson", data: spillsGeoJSON});
+      map.addSource("locations", {type: "geojson", data: locations});
+
+      map.addLayer({
+        id: "pipelines-oil",
+        type: "line",
+        source: "pipelines",
+        filter: ["==", ["get", "fluid"], "OIL"],
+        paint: {"line-color": "#999", "line-width": 1.5, "line-opacity": 0.7}
+      });
+      map.addLayer({
+        id: "pipelines-gas",
+        type: "line",
+        source: "pipelines",
+        filter: ["==", ["get", "fluid"], "GAS"],
+        paint: {"line-color": "#e45756", "line-width": 2, "line-opacity": 0.85}
+      });
+      map.addLayer({
+        id: "pipelines-other",
+        type: "line",
+        source: "pipelines",
+        filter: ["all", ["!=", ["get", "fluid"], "OIL"], ["!=", ["get", "fluid"], "GAS"]],
+        paint: {"line-color": "#7f7f7f", "line-width": 1.5, "line-opacity": 0.6}
+      });
+
+      map.addLayer({
+        id: "spills",
+        type: "circle",
+        source: "spills",
+        paint: {
+          "circle-radius": 3,
+          "circle-color": "#ff6b35",
+          "circle-opacity": 0.4,
+          "circle-stroke-width": 0
+        },
+        layout: {visibility: showSpills ? "visible" : "none"}
+      });
+
+      map.addLayer({
+        id: "locations-circle",
+        type: "circle",
+        source: "locations",
+        paint: {
+          "circle-radius": ["case", ["==", ["get", "name"], "Bille Town"], 8, 5],
+          "circle-color": ["case", ["==", ["get", "name"], "Bille Town"], "#ff4136", "#f0c808"],
+          "circle-stroke-color": "#000",
+          "circle-stroke-width": 1
+        }
+      });
+      map.addLayer({
+        id: "locations-label",
+        type: "symbol",
+        source: "locations",
+        layout: {
+          "text-field": ["get", "name"],
+          "text-size": 12,
+          "text-offset": [0, -1.2],
+          "text-anchor": "bottom",
+          "text-font": ["Open Sans Bold"]
+        },
+        paint: {
+          "text-color": "#f0c808",
+          "text-halo-color": "#111",
+          "text-halo-width": 2
+        }
+      });
+
+      const popup = new maplibregl.Popup({closeButton: false, closeOnClick: false, maxWidth: "280px"});
+
+      for (const layerId of ["pipelines-oil", "pipelines-gas", "pipelines-other"]) {
+        map.on("mouseenter", layerId, (e) => {
+          map.getCanvas().style.cursor = "pointer";
+          const p = e.features[0].properties;
+          popup.setLngLat(e.lngLat)
+            .setHTML(`<b>${p.name || "Unknown pipeline"}</b><br>${p.fluid || ""} · ${p.status || ""}`)
+            .addTo(map);
+        });
+        map.on("mouseleave", layerId, () => {
+          map.getCanvas().style.cursor = "";
+          popup.remove();
+        });
+      }
+
+      map.on("mouseenter", "spills", (e) => {
+        map.getCanvas().style.cursor = "pointer";
+        const p = e.features[0].properties;
+        popup.setLngLat(e.lngLat)
+          .setHTML(`<b>${p.location || ""}</b><br>${p.date} · ${p.company}<br>Cause: ${p.cause} · ${p.quantity} bbl`)
+          .addTo(map);
+      });
+      map.on("mouseleave", "spills", () => {
+        map.getCanvas().style.cursor = "";
+        popup.remove();
+      });
+    });
+  </script>
+
+</notebook>

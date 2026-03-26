@@ -1,0 +1,40 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "name": "Bille Town" },
+      "geometry": { "type": "Point", "coordinates": [6.8888, 4.5763] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Soku Gas Plant" },
+      "geometry": { "type": "Point", "coordinates": [6.6091, 4.6590] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Cawthorne Channel" },
+      "geometry": { "type": "Point", "coordinates": [7.0500, 4.5500] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Krakama Flow Station" },
+      "geometry": { "type": "Point", "coordinates": [6.890, 4.555] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Obita" },
+      "geometry": { "type": "Point", "coordinates": [6.6575, 5.0222] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Rumuji" },
+      "geometry": { "type": "Point", "coordinates": [6.77876, 4.94015] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Obiafu-Obrikom" },
+      "geometry": { "type": "Point", "coordinates": [6.5945, 5.4174] }
+    }
+  ]
+}

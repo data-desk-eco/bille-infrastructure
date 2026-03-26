@@ -1,0 +1,7 @@
+docs/.observable
+node_modules
+.DS_Store
+**/.DS_Store
+data/last_updated.json
+data/data.duckdb
+data/data.duckdb.wal
