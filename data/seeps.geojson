@@ -6,14 +6,21 @@
 "geometry": {
 "type": "Point",
 "coordinates": [
-6.88116,
-4.58047
+6.88483,
+4.57792
 ]
 },
 "properties": {
-"name": "Oruama Kuba Point 2",
+"site": "D1S2",
+"name": "Opuasa",
+"community": "Opuasa",
+"description": "abandoned borehole with plastic vent; nearby well bubbling",
+"source_type": "outdoor",
+"ch4_ppm": 758,
+"voc_ppm": 246,
+"h2s_ppm": 0.0,
 "first": false,
-"source": "SOMO brief map, georeferenced by hand (approx. 200 m)"
+"source": "Numbere, Udi and Iwuji, 28 to 29 May 2026, Garmin GPS"
 }
 },
 {
@@ -21,14 +28,21 @@
 "geometry": {
 "type": "Point",
 "coordinates": [
-6.87873,
-4.58013
+6.88387,
+4.57773
 ]
 },
 "properties": {
-"name": "Okuramakubu Point 1",
+"site": "D1S3",
+"name": "River (Opuasa waterfront)",
+"community": "River (Opuasa waterfront)",
+"description": "bubbling mid-river, spreading on the surface",
+"source_type": "outdoor",
+"ch4_ppm": 2828,
+"voc_ppm": 1605,
+"h2s_ppm": 0.02,
 "first": false,
-"source": "SOMO brief map, georeferenced by hand (approx. 200 m)"
+"source": "Numbere, Udi and Iwuji, 28 to 29 May 2026, Garmin GPS"
 }
 },
 {
@@ -36,14 +50,21 @@
 "geometry": {
 "type": "Point",
 "coordinates": [
-6.87884,
-4.58001
+6.88482,
+4.57737
 ]
 },
 "properties": {
-"name": "Okuramakubu Point 1",
+"site": "D1S4",
+"name": "Opuokira",
+"community": "Opuokira",
+"description": "abandoned borehole; over 40 bubbling points in a 20 by 10 ft area",
+"source_type": "outdoor",
+"ch4_ppm": 1977,
+"voc_ppm": 506,
+"h2s_ppm": 0.04,
 "first": false,
-"source": "SOMO brief map, georeferenced by hand (approx. 200 m)"
+"source": "Numbere, Udi and Iwuji, 28 to 29 May 2026, Garmin GPS"
 }
 },
 {
@@ -51,14 +72,21 @@
 "geometry": {
 "type": "Point",
 "coordinates": [
-6.88314,
-4.57977
+6.8857,
+4.57678
 ]
 },
 "properties": {
-"name": "Opu Abekere",
+"site": "D1S5",
+"name": "Opuimo",
+"community": "Opuimo",
+"description": "over 50 bubbling points along house corridors",
+"source_type": "outdoor",
+"ch4_ppm": 1392,
+"voc_ppm": 653,
+"h2s_ppm": 0.01,
 "first": false,
-"source": "SOMO brief map, georeferenced by hand (approx. 200 m)"
+"source": "Numbere, Udi and Iwuji, 28 to 29 May 2026, Garmin GPS"
 }
 },
 {
@@ -66,14 +94,21 @@
 "geometry": {
 "type": "Point",
 "coordinates": [
-6.88225,
-4.5791
+6.88587,
+4.57662
 ]
 },
 "properties": {
-"name": "Opu Sira (north)",
+"site": "D1S6",
+"name": "Opuimo",
+"community": "Opuimo",
+"description": "gas at a house wall stained red by iron",
+"source_type": "outdoor",
+"ch4_ppm": 1392,
+"voc_ppm": 653,
+"h2s_ppm": 0.01,
 "first": false,
-"source": "SOMO brief map, georeferenced by hand (approx. 200 m)"
+"source": "Numbere, Udi and Iwuji, 28 to 29 May 2026, Garmin GPS"
 }
 },
 {
@@ -81,29 +116,21 @@
 "geometry": {
 "type": "Point",
 "coordinates": [
-6.88163,
-4.57731
-]
-},
-"properties": {
-"name": "Opu Dah Point 1",
-"first": false,
-"source": "SOMO brief map, georeferenced by hand (approx. 200 m)"
-}
-},
-{
-"type": "Feature",
-"geometry": {
-"type": "Point",
-"coordinates": [
-6.8818,
+6.88597,
 4.57667
 ]
 },
 "properties": {
-"name": "Opu Asa Compound",
+"site": "D1S7",
+"name": "Opuimo well 1",
+"community": "Opuimo",
+"description": "well with gas bubbling from the water",
+"source_type": "outdoor",
+"ch4_ppm": 1392,
+"voc_ppm": 653,
+"h2s_ppm": 0.01,
 "first": false,
-"source": "SOMO brief map, georeferenced by hand (approx. 200 m)"
+"source": "Numbere, Udi and Iwuji, 28 to 29 May 2026, Garmin GPS"
 }
 },
 {
@@ -111,14 +138,21 @@
 "geometry": {
 "type": "Point",
 "coordinates": [
-6.88716,
-4.57658
+6.88608,
+4.5766
 ]
 },
 "properties": {
-"name": "Iwoama Point 2",
+"site": "D1S8",
+"name": "Opuimo well 2",
+"community": "Opuimo",
+"description": "abandoned well",
+"source_type": "outdoor",
+"ch4_ppm": 1392,
+"voc_ppm": 653,
+"h2s_ppm": 0.01,
 "first": false,
-"source": "SOMO brief map, georeferenced by hand (approx. 200 m)"
+"source": "Numbere, Udi and Iwuji, 28 to 29 May 2026, Garmin GPS"
 }
 },
 {
@@ -126,14 +160,21 @@
 "geometry": {
 "type": "Point",
 "coordinates": [
-6.88462,
-4.57627
+6.88578,
+4.5765
 ]
 },
 "properties": {
-"name": "Iwoama compound point 1",
-"first": false,
-"source": "SOMO brief map, georeferenced by hand (approx. 200 m)"
+"site": "D1S9",
+"name": "Opuosia borehole",
+"community": "Opuosia",
+"description": "abandoned borehole, bubbling, pungent smell",
+"source_type": "outdoor",
+"ch4_ppm": 537,
+"voc_ppm": 1082,
+"h2s_ppm": 0.12,
+"first": true,
+"source": "Numbere, Udi and Iwuji, 28 to 29 May 2026, Garmin GPS"
 }
 },
 {
@@ -141,164 +182,219 @@
 "geometry": {
 "type": "Point",
 "coordinates": [
-6.88417,
+6.88633,
+4.5766
+]
+},
+"properties": {
+"site": "D1S10",
+"name": "Opuosia (miracle plant point)",
+"community": "Opuosia",
+"description": "abandoned borehole with vent; pear tree dead, plants yellow within 4 ft",
+"source_type": "outdoor",
+"ch4_ppm": 537,
+"voc_ppm": 1082,
+"h2s_ppm": 0.12,
+"first": true,
+"source": "Numbere, Udi and Iwuji, 28 to 29 May 2026, Garmin GPS"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+6.88647,
 4.576
 ]
 },
 "properties": {
-"name": "Iwoama compound point 5",
-"first": false,
-"source": "SOMO brief map, georeferenced by hand (approx. 200 m)"
-}
-},
-{
-"type": "Feature",
-"geometry": {
-"type": "Point",
-"coordinates": [
-6.88389,
-4.57591
-]
-},
-"properties": {
-"name": "Iwoama compound point 5",
-"first": false,
-"source": "SOMO brief map, georeferenced by hand (approx. 200 m)"
-}
-},
-{
-"type": "Feature",
-"geometry": {
-"type": "Point",
-"coordinates": [
-6.8878,
-4.57591
-]
-},
-"properties": {
-"name": "Iwoama Point 3",
-"first": false,
-"source": "SOMO brief map, georeferenced by hand (approx. 200 m)"
-}
-},
-{
-"type": "Feature",
-"geometry": {
-"type": "Point",
-"coordinates": [
-6.88459,
-4.57588
-]
-},
-"properties": {
-"name": "Iwoama compound point 1",
-"first": false,
-"source": "SOMO brief map, georeferenced by hand (approx. 200 m)"
-}
-},
-{
-"type": "Feature",
-"geometry": {
-"type": "Point",
-"coordinates": [
-6.88409,
-4.57585
-]
-},
-"properties": {
-"name": "Iwoama compound point 5",
-"first": false,
-"source": "SOMO brief map, georeferenced by hand (approx. 200 m)"
-}
-},
-{
-"type": "Feature",
-"geometry": {
-"type": "Point",
-"coordinates": [
-6.88169,
-4.57548
-]
-},
-"properties": {
-"name": "Opu Ibi-ila Compound",
-"first": false,
-"source": "SOMO brief map, georeferenced by hand (approx. 200 m)"
-}
-},
-{
-"type": "Feature",
-"geometry": {
-"type": "Point",
-"coordinates": [
-6.88691,
-4.57542
-]
-},
-"properties": {
-"name": "Opu Imo Point 5",
-"first": false,
-"source": "SOMO brief map, georeferenced by hand (approx. 200 m)"
-}
-},
-{
-"type": "Feature",
-"geometry": {
-"type": "Point",
-"coordinates": [
-6.88442,
-4.57494
-]
-},
-"properties": {
-"name": "Opu Imo Point 6",
-"first": false,
-"source": "SOMO brief map, georeferenced by hand (approx. 200 m)"
-}
-},
-{
-"type": "Feature",
-"geometry": {
-"type": "Point",
-"coordinates": [
-6.8842,
-4.57479
-]
-},
-"properties": {
-"name": "Opu Sira",
-"first": false,
-"source": "SOMO brief map, georeferenced by hand (approx. 200 m)"
-}
-},
-{
-"type": "Feature",
-"geometry": {
-"type": "Point",
-"coordinates": [
-6.88827,
-4.57309
-]
-},
-"properties": {
-"name": "Iwoama compound point 4",
-"first": false,
-"source": "SOMO brief map, georeferenced by hand (approx. 200 m)"
-}
-},
-{
-"type": "Feature",
-"geometry": {
-"type": "Point",
-"coordinates": [
-6.8873,
-4.57035
-]
-},
-"properties": {
-"name": "Opu Osia",
+"site": "D1S11",
+"name": "Opuosia",
+"community": "Opuosia",
+"description": "vented borehole",
+"source_type": "outdoor",
+"ch4_ppm": 537,
+"voc_ppm": 1082,
+"h2s_ppm": 0.12,
 "first": true,
-"source": "SOMO brief map, georeferenced by hand (approx. 200 m)"
+"source": "Numbere, Udi and Iwuji, 28 to 29 May 2026, Garmin GPS"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+6.8892,
+4.57435
+]
+},
+"properties": {
+"site": "D1S12",
+"name": "Iwoama",
+"community": "Iwoama",
+"description": "abandoned borehole by the mangrove; water pulses out and turns black",
+"source_type": "outdoor",
+"ch4_ppm": 1967,
+"voc_ppm": 457,
+"h2s_ppm": 0.88,
+"first": false,
+"source": "Numbere, Udi and Iwuji, 28 to 29 May 2026, Garmin GPS"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+6.8851,
+4.57827
+]
+},
+"properties": {
+"site": "D2S3",
+"name": "Opudah",
+"community": "Opudah",
+"description": "indoor, beside the vented chamber where a fire broke a window (site 1)",
+"source_type": "indoor",
+"ch4_ppm": 1692,
+"voc_ppm": 840,
+"h2s_ppm": 0.06,
+"first": false,
+"source": "Numbere, Udi and Iwuji, 28 to 29 May 2026, Garmin GPS"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+6.8851,
+4.57823
+]
+},
+"properties": {
+"site": "D2S4",
+"name": "Opusara",
+"community": "Opusara",
+"description": "abandoned borehole",
+"source_type": "outdoor",
+"ch4_ppm": 672,
+"voc_ppm": 817,
+"h2s_ppm": 0.1,
+"first": false,
+"source": "Numbere, Udi and Iwuji, 28 to 29 May 2026, Garmin GPS"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+6.88465,
+4.57878
+]
+},
+"properties": {
+"site": "D2S5",
+"name": "Opusara",
+"community": "Opusara",
+"description": "leaking borehole pipe by an overhead tank",
+"source_type": "outdoor",
+"ch4_ppm": 672,
+"voc_ppm": 817,
+"h2s_ppm": 0.1,
+"first": false,
+"source": "Numbere, Udi and Iwuji, 28 to 29 May 2026, Garmin GPS"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+6.88477,
+4.5773
+]
+},
+"properties": {
+"site": "D2S6",
+"name": "Opuimo",
+"community": "Opuimo",
+"description": "indoor, store beside site 4",
+"source_type": "indoor",
+"ch4_ppm": 1392,
+"voc_ppm": 653,
+"h2s_ppm": 0.01,
+"first": false,
+"source": "Numbere, Udi and Iwuji, 28 to 29 May 2026, Garmin GPS"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+6.88637,
+4.57673
+]
+},
+"properties": {
+"site": "D2S7",
+"name": "Opuokira",
+"community": "Opuokira",
+"description": "indoor",
+"source_type": "indoor",
+"ch4_ppm": 1977,
+"voc_ppm": 506,
+"h2s_ppm": 0.04,
+"first": false,
+"source": "Numbere, Udi and Iwuji, 28 to 29 May 2026, Garmin GPS"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+6.88653,
+4.57595
+]
+},
+"properties": {
+"site": "D2S8",
+"name": "Opuosia",
+"community": "Opuosia",
+"description": "outdoor",
+"source_type": "outdoor",
+"ch4_ppm": 537,
+"voc_ppm": 1082,
+"h2s_ppm": 0.12,
+"first": true,
+"source": "Numbere, Udi and Iwuji, 28 to 29 May 2026, Garmin GPS"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+6.88663,
+4.5759
+]
+},
+"properties": {
+"site": "D2S9",
+"name": "Opuosia",
+"community": "Opuosia",
+"description": "indoor; occupant moved out",
+"source_type": "indoor",
+"ch4_ppm": 537,
+"voc_ppm": 1082,
+"h2s_ppm": 0.12,
+"first": true,
+"source": "Numbere, Udi and Iwuji, 28 to 29 May 2026, Garmin GPS"
 }
 }
 ]

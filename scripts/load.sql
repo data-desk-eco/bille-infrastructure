@@ -7,7 +7,8 @@ SELECT name, fluid, status, round(ST_Distance(ST_Transform(geom, 'EPSG:4326', 'E
        ST_Transform(ST_Point(6.8888, 4.5763), 'EPSG:4326', 'EPSG:32632', true)) / 1000, 2) AS km
 FROM ST_Read('data/pipelines.geojson');
 CREATE OR REPLACE TABLE locations AS SELECT * FROM ST_Read('data/locations.geojson');
-CREATE OR REPLACE TABLE seeps AS SELECT name, first, ST_X(geom) AS lon, ST_Y(geom) AS lat FROM ST_Read('data/seeps.geojson');
+CREATE OR REPLACE TABLE seeps AS SELECT * EXCLUDE (geom), ST_X(geom) AS lon, ST_Y(geom) AS lat FROM ST_Read('data/seeps.geojson');
+CREATE OR REPLACE TABLE numbere AS SELECT * FROM read_csv('data/numbere.csv');
 CREATE OR REPLACE TABLE events AS SELECT * FROM read_csv('data/events.csv');
 CREATE OR REPLACE TABLE flares AS SELECT *, round(ST_Distance_Sphere(ST_Point(lon, lat), ST_Point(6.8888, 4.5763)) / 1000, 2) AS km FROM 'data/flares.parquet';
 CREATE OR REPLACE TABLE detections AS SELECT * FROM 'data/detections.parquet';

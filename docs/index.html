@@ -48,7 +48,11 @@
   </script>
 
   <script id="seep_rows" output="seeps" type="application/sql" database="../data/data.duckdb" hidden>
-    SELECT name, first, lat, lon FROM seeps
+    SELECT site, name, community, description, source_type, ch4_ppm, voc_ppm, h2s_ppm, first, lat, lon FROM seeps
+  </script>
+
+  <script id="numbere_rows" output="numbere" type="application/sql" database="../data/data.duckdb" hidden>
+    SELECT * FROM numbere ORDER BY ch4_ppm DESC
   </script>
 
   <script id="event_rows" output="events" type="application/sql" database="../data/data.duckdb" hidden>
@@ -74,7 +78,7 @@
 
     Gas has bubbled from creeks, boreholes and compounds in Bille Town, Rivers State, since late October 2025. This page assembles the open data that bears on its source: wells, flow stations and pipelines; satellite flaring and methane detections; regulator incident records; and Sentinel-1 and Sentinel-2 change analysis around the seeps.
 
-    The ${krakama.length} Krakama field wells lie ${fmt(d3.min(krakama, w => w.km))} to ${fmt(d3.max(krakama, w => w.km))} km south of the town, completed between ${d3.min(years)} and ${d3.max(years)}; the oldest well within 8 km is ${oldest.name} (${new Date(oldest.completed).getUTCFullYear()}). The nearest pipeline, the ${nearestPipe.name.replace(/ - EAST\/WEST/, "")}, passes ${fmt(nearestPipe.km)} km from the town centre. The nearest facility with satellite-detected flaring is the Awoba flow station, ${fmt(awoba.km)} km west, where flaring resumed in ${new Date(flaring.find(f => f.site === "Awoba flow station" && f.month >= new Date("2024-01-01") && f.nights > 5).month).toLocaleDateString("en-GB", {month: "long", year: "numeric"})}. Since November 2025 the mangrove within 1.5 km of the seeps has read ${fmt3(dAfter)} NDVI against a control ring 4 to 6 km away, compared with ${fmt3(dBefore)} over the three years before.
+    The ${krakama.length} Krakama field wells lie ${fmt(d3.min(krakama, w => w.km))} to ${fmt(d3.max(krakama, w => w.km))} km south of the town, completed between ${d3.min(years)} and ${d3.max(years)}; the oldest well within 8 km is ${oldest.name} (${new Date(oldest.completed).getUTCFullYear()}). The nearest pipeline, the ${nearestPipe.name.replace(/ - EAST\/WEST/, "")}, passes ${fmt(nearestPipe.km)} km from the town centre. The nearest facility with satellite-detected flaring is the Awoba flow station, ${fmt(awoba.km)} km west, where flaring resumed in ${new Date(flaring.find(f => f.site === "Awoba flow station" && f.month >= new Date("2024-01-01") && f.nights > 5).month).toLocaleDateString("en-GB", {month: "long", year: "numeric"})}. The ${seeps.length} surveyed seeps cluster on the western tip of the town, all within ${Math.round(d3.max(seeps, s => Math.hypot((s.lon - d3.mean(seeps, s => s.lon)) * 110.6e3, (s.lat - d3.mean(seeps, s => s.lat)) * 110.6e3)))} m of their centroid, and the highest methane and VOC readings were mid-river. Since November 2025 the mangrove within 1.5 km of the seeps has read ${fmt3(dAfter)} NDVI against a control ring 4 to 6 km away, compared with ${fmt3(dBefore)} over the three years before.
   </script>
 
   <script id="load_maplibre" type="module" hidden>
@@ -175,7 +179,7 @@
       add("hotspots", {type: "circle", source: "hotspots", paint: {"circle-radius": ["interpolate", ["linear"], ["get", "ha"], 0.2, 4, 5, 12], "circle-color": "rgba(0,0,0,0)", "circle-stroke-color": "#d62728", "circle-stroke-width": 2}}, "Sentinel-2 vegetation-loss cluster", '<span class="k" style="border-radius:50%;border:2px solid #d62728"></span>', false);
       add("targets", {type: "circle", source: "targets", paint: {"circle-radius": ["interpolate", ["linear"], ["get", "ha"], 0.2, 4, 5, 12], "circle-color": "rgba(0,0,0,0)", "circle-stroke-color": "#ff7f0e", "circle-stroke-width": 2}}, "Sentinel-1 new bright target", '<span class="k" style="border-radius:50%;border:2px solid #ff7f0e"></span>', false);
       map.addLayer({id: "town", type: "symbol", source: "town", layout: {"text-field": ["get", "name"], "text-size": 12, "text-offset": [0, 1.2], "text-anchor": "top", "text-font": ["Open Sans Semibold"]}, paint: {"text-color": "#fff", "text-halo-color": "#000", "text-halo-width": 1.5}});
-      add("seeps", {type: "circle", source: "seeps", paint: {"circle-radius": ["case", ["get", "first"], 8, 5], "circle-color": "#fff", "circle-stroke-color": "#000", "circle-stroke-width": 1.5}}, "Reported gas seep, larger = first sighting (SOMO, approximate)", '<span class="k" style="border-radius:50%;background:#fff"></span>');
+      add("seeps", {type: "circle", source: "seeps", paint: {"circle-radius": ["case", ["get", "first"], 8, 5], "circle-color": "#fff", "circle-stroke-color": "#000", "circle-stroke-width": 1.5}}, "Surveyed seep, 28 to 29 May 2026 (Numbere et al.); larger = Opuosia, where bubbling was first seen", '<span class="k" style="border-radius:50%;background:#fff"></span>');
 
       const key = html`<div class="map-key"><div class="head">Layers</div>${layers.map(l => {
         const cb = html`<input type="checkbox" ${l.on ? "checked" : ""}>`;
@@ -192,7 +196,7 @@
         flares: p => `<b>${p.name ?? "Flare site " + p.id}</b><br>${p.detail}<br>${p.detections} flare-nights, ${new Date(p.first_seen).getUTCFullYear()} to ${new Date(p.last_seen).toLocaleDateString("en-GB", {month: "short", year: "numeric"})}<br>${p.km} km from town`,
         incidents: p => `<b>${p.location}</b><br>${new Date(p.date).toLocaleDateString("en-GB")} · ${p.company}<br>cause ${p.cause} · ${p.contaminant ?? ""} ${p.quantity ? p.quantity + " bbl" : ""}`,
         plumes: p => `<b>${p.provider} · ${p.satellite}</b><br>${new Date(p.date).toLocaleDateString("en-GB")} · ${p.rate_kg_h ? p.rate_kg_h + " kg/h" : "unquantified"}<br>${p.km} km from town`,
-        seeps: p => `<b>${p.name}</b><br>${p.first ? "first sighting, 25 October 2025" : "reported seep"}<br>position approximate`,
+        seeps: p => `<b>${p.site} · ${p.name}</b><br>${p.description}<br>community mean CH4 ${p.ch4_ppm ?? "?"} ppm · VOC ${p.voc_ppm ?? "?"} ppm · H2S ${p.h2s_ppm ?? "?"} ppm${p.first ? "<br>Opuosia: where bubbling was first reported" : ""}`,
         hotspots: p => `<b>Vegetation loss</b><br>${p.ha} ha · mean NDVI change ${p.mean}<br>${p.km_from_seeps} km from the seeps`,
         targets: p => `<b>New radar target</b><br>${p.ha} ha · +${p.mean} dB<br>${p.km_from_seeps} km from the seeps`
       };
@@ -204,7 +208,7 @@
   </script>
 
   <script id="map_caption" type="text/markdown">
-    *Imagery: Esri. Seep positions are digitised from the SOMO briefing map and are accurate to roughly 200 m; Dr Numbere's report holds the surveyed coordinates.*
+    *Imagery: Esri. Seep positions are the Garmin fixes in Dr Numbere's survey of 28 to 29 May 2026 for Source International; the concentrations are community means from a handheld Kanomax meter.*
   </script>
 
   <script id="rule_1" type="text/html"><hr></script>
@@ -299,6 +303,21 @@
 
   <script id="rule_4" type="text/html"><hr></script>
 
+  <script id="numbere_table" type="module">
+    display(html`<h2>Air measurements at the seeps, 28 to 29 May 2026</h2>`);
+    display(Inputs.table(numbere, {
+      columns: ["community", "n_sites", "ch4_ppm", "ch4_se", "voc_ppm", "voc_se", "h2s_ppm", "co2_ppm", "nh3_ppm"],
+      header: {community: "Community", n_sites: "Sites", ch4_ppm: "CH4 (ppm)", ch4_se: "± SE", voc_ppm: "VOC (ppm)", voc_se: "± SE", h2s_ppm: "H2S (ppm)", co2_ppm: "CO2 (ppm)", nh3_ppm: "NH3 (ppm)"},
+      rows: 10, width: {community: 220}
+    }));
+  </script>
+
+  <script id="numbere_caption" type="text/markdown">
+    *Source: Numbere, Udi and Iwuji for Source International, Kanomax 2740 handheld meter, in situ, indoor and outdoor. Methane above 1,000 ppm at four of eight sites; VOC at hundreds of ppm everywhere, which points to wet, thermogenic gas rather than marsh methane.*
+  </script>
+
+  <script id="rule_4b" type="text/html"><hr></script>
+
   <script id="wells_table" type="module">
     display(html`<h2>Wells within 8 km of Bille Town</h2>`);
     display(Inputs.table(wellsNear.map(w => ({...w, completed: w.completed ? new Date(w.completed).getUTCFullYear() : null})), {
@@ -339,11 +358,11 @@
   <script id="method" type="text/markdown">
     ## Method and limits
 
-    - Source: wells and pipelines from MapStand (retrieved ${dateText}); flow stations from OGIM; flare sites and nightly detections from EOG VIIRS Nightfire and methane plumes from IMEO, Carbon Mapper, SRON and Nature Trace, all through the Data Desk archive; incidents from NOSDRA; seep positions from the SOMO briefing map; EMIT L2B methane enhancement from NASA LP DAAC; Sentinel-1 RTC from Microsoft Planetary Computer; Sentinel-2 L2A from the AWS open archive.
+    - Source: wells and pipelines from MapStand (retrieved ${dateText}); flow stations from OGIM; flare sites and nightly detections from EOG VIIRS Nightfire and methane plumes from IMEO, Carbon Mapper, SRON and Nature Trace, all through the Data Desk archive; incidents from NOSDRA; seep positions and air readings from Dr Numbere's survey for Source International; EMIT L2B methane enhancement from NASA LP DAAC; Sentinel-1 RTC from Microsoft Planetary Computer; Sentinel-2 L2A from the AWS open archive.
     - Matching: distances are from the OSM town node (4.5763 N, 6.8888 E). A flare site is a facility when a flow station or a well cluster sits within 700 m.
     - Estimate: the radar series is the peak VV in a 5 by 5 pixel window (100 m) minus that site's median before October 2025, so a persistent structure reads near zero and a new one as a positive step. The NDVI series uses scene-classification classes 4, 5 and 7 with NDVI above 0.2; the water series uses class 6.
     - Window: the change overlays compare November 2025 to March 2026 with the same months one and two years earlier (Sentinel-2) or one year earlier, orbit by orbit (Sentinel-1).
     - Coverage: EMIT crossed Bille once after the seeps began, on 21 February 2026 at 83% cloud, so the enhancement there is suggestive only. Carbon Mapper's Tanager has no scene over Bille. Sentinel-2 is cloud-free at Bille on fewer than one scene in five.
-    - Uncertainty: NOSDRA positions and MapStand well status are unverified; the seep positions are digitised from a map and not from the survey; the reported methane readings (10,000 times background; 36% of the lower explosive limit) are quoted from NOSDRA through Amnesty International and Social Action and not from a published dataset.
+    - Uncertainty: NOSDRA positions and MapStand well status are unverified; the survey fixes for day-one site 1 are garbled in the report and the day-two fix at the same spot is used instead; the handheld meter reads total VOC without speciation; NOSDRA's own December 2025 readings (10,000 times background; 36% of the lower explosive limit) are quoted through Amnesty International and Social Action and not from a published dataset.
   </script>
 </notebook>

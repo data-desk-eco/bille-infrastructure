@@ -21,7 +21,7 @@ R = os.path.join(os.path.dirname(__file__), "..")
 S1 = json.load(open(f"{R}/data/s1/scenes.json"))
 S2 = json.load(open(f"{R}/data/s2/scenes.json")) if os.path.exists(f"{R}/data/s2/scenes.json") else {**S1, "scenes": []}
 W, S, E, N = S2["bounds"]; RES = 20
-SEEP = (6.885, 4.577)  # centre of the reported seep cluster
+SEEP = (6.8855, 4.5770)  # centre of the surveyed seep cluster (numbere et al., may 2026)
 
 def grid(bounds):
     w, s, e, n = bounds; h, wd = int(round((n - s) / RES)), int(round((e - w) / RES))

@@ -36,7 +36,7 @@ data/s1/scenes.json:
 
 data: data/data.duckdb
 
-data/data.duckdb: scripts/load.sql data/spills.json data/pipelines.geojson data/wells.geojson data/seeps.geojson data/events.csv data/flares.parquet
+data/data.duckdb: scripts/load.sql data/spills.json data/pipelines.geojson data/wells.geojson data/seeps.geojson data/numbere.csv data/events.csv data/flares.parquet
 	rm -f $@ && duckdb < scripts/load.sql
 
 clean:
