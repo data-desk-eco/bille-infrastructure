@@ -1,241 +1,349 @@
 <!doctype html>
 <notebook theme="midnight">
-  <title>Oil and gas infrastructure near Bille, Nigeria</title>
+  <title>Where is the Bille gas coming from?</title>
 
   <script id="last_updated" type="module" hidden>
     const lastUpdated = await FileAttachment("../data/last_updated.json").json();
-    const commitDate = new Date(lastUpdated.date);
-    const dateText = commitDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+    const dateText = new Date(lastUpdated.date).toLocaleDateString("en-GB", {day: "numeric", month: "long", year: "numeric"});
+  </script>
+
+  <script id="wells_near" output="wellsNear" type="application/sql" database="../data/data.duckdb" hidden>
+    SELECT name, status, type, completed, depth_m, operator, field, km, lat, lon FROM wells WHERE km < 8 ORDER BY km
+  </script>
+
+  <script id="wells_all" output="wellsAll" type="application/sql" database="../data/data.duckdb" hidden>
+    SELECT name, status, type, completed, depth_m, operator, field, km, lat, lon FROM wells WHERE km < 25
+  </script>
+
+  <script id="pipes_near" output="pipesNear" type="application/sql" database="../data/data.duckdb" hidden>
+    SELECT name, fluid, status, km FROM pipelines WHERE km < 6 ORDER BY km
+  </script>
+
+  <script id="flare_sites" output="flareSites" type="application/sql" database="../data/data.duckdb" hidden>
+    SELECT id, lat, lon, km, detail, first_seen, last_seen, detections,
+      CASE id WHEN '2291' THEN 'Awoba flow station' WHEN '2305' THEN 'Awoba flow station' WHEN '2405' THEN 'Krakama flow station'
+              WHEN '2443' THEN 'Cawthorne Channel 3 (Akaso)' WHEN '2579' THEN 'Cawthorne Channel 2' WHEN '2454' THEN 'Idama' END AS name
+    FROM flares WHERE km < 15
+  </script>
+
+  <script id="flaring_rows" output="flaring" type="application/sql" database="../data/data.duckdb" hidden>
+    SELECT CASE site WHEN '2291' THEN 'Awoba flow station' WHEN '2305' THEN 'Awoba flow station' WHEN '2405' THEN 'Krakama flow station'
+                     WHEN '2443' THEN 'Cawthorne Channel 3 (Akaso)' WHEN '2579' THEN 'Cawthorne Channel 2' WHEN '2454' THEN 'Idama' END AS site,
+           month, sum(nights) AS nights, round(sum(rh_mw), 1) AS rh_mw
+    FROM flaring_monthly WHERE site IN ('2291', '2305', '2405', '2443', '2579', '2454') AND month >= DATE '2023-01-01'
+    GROUP BY ALL ORDER BY site, month
+  </script>
+
+  <script id="incident_rows" output="incidents" type="application/sql" database="../data/data.duckdb" hidden>
+    SELECT date, company, cause, contaminant, quantity, location, status, lat, lon, km
+    FROM spills WHERE date >= '2024-01-01' AND km < 20 ORDER BY date DESC
+  </script>
+
+  <script id="plume_rows" output="plumes" type="application/sql" database="../data/data.duckdb" hidden>
+    SELECT provider, date, rate_kg_h, satellite, lat, lon, km FROM plumes WHERE km < 60 ORDER BY date
+  </script>
+
+  <script id="facility_rows" output="facilities" type="application/sql" database="../data/data.duckdb" hidden>
+    SELECT name, operator, detail, lat, lon, km FROM infra WHERE kind = 'station' AND km < 15
+  </script>
+
+  <script id="seep_rows" output="seeps" type="application/sql" database="../data/data.duckdb" hidden>
+    SELECT name, first, lat, lon FROM seeps
+  </script>
+
+  <script id="event_rows" output="events" type="application/sql" database="../data/data.duckdb" hidden>
+    SELECT date, event, source FROM events ORDER BY date
+  </script>
+
+  <script id="numbers" type="module" hidden>
+    const krakama = wellsNear.filter(w => w.name.startsWith("KRAKAMA"));
+    const years = krakama.map(w => new Date(w.completed).getUTCFullYear());
+    const awoba = flareSites.find(f => f.id === "2291");
+    const nearestPipe = pipesNear[0];
+    const oldest = wellsNear.reduce((a, b) => new Date(a.completed) < new Date(b.completed) ? a : b);
+    const fmt = d3.format(".1f");
+    const s2all = Array.from(await FileAttachment("../data/s2/summary.parquet").parquet()).filter(r => r.ndvi_near != null && r.ndvi_control != null);
+    const s2diff = p => d3.mean(s2all.filter(p), r => r.ndvi_near - r.ndvi_control);
+    const dBefore = s2diff(r => r.date < "2025-11-01"), dAfter = s2diff(r => r.date >= "2025-11-01");
+    const fmt3 = d3.format("+.3f");
   </script>
 
   <script id="header" type="text/markdown">
-    # Oil and gas infrastructure near Bille, Nigeria
+    # Where is the Bille gas coming from?
     *${dateText}*
 
-    Oil and gas pipelines and oil spill incidents around Bille, OML 18, Rivers State, Niger Delta. Pipeline data from [MapStand](https://app.mapstand.com/), spill data from [NOSDRA](https://oilspillmonitor.ng/).
+    Gas has bubbled from creeks, boreholes and compounds in Bille Town, Rivers State, since late October 2025. This page assembles the open data that bears on its source: wells, flow stations and pipelines; satellite flaring and methane detections; regulator incident records; and Sentinel-1 and Sentinel-2 change analysis around the seeps.
+
+    The ${krakama.length} Krakama field wells lie ${fmt(d3.min(krakama, w => w.km))} to ${fmt(d3.max(krakama, w => w.km))} km south of the town, completed between ${d3.min(years)} and ${d3.max(years)}; the oldest well within 8 km is ${oldest.name} (${new Date(oldest.completed).getUTCFullYear()}). The nearest pipeline, the ${nearestPipe.name.replace(/ - EAST\/WEST/, "")}, passes ${fmt(nearestPipe.km)} km from the town centre. The nearest facility with satellite-detected flaring is the Awoba flow station, ${fmt(awoba.km)} km west, where flaring resumed in ${new Date(flaring.find(f => f.site === "Awoba flow station" && f.month >= new Date("2024-01-01") && f.nights > 5).month).toLocaleDateString("en-GB", {month: "long", year: "numeric"})}. Since November 2025 the mangrove within 1.5 km of the seeps has read ${fmt3(dAfter)} NDVI against a control ring 4 to 6 km away, compared with ${fmt3(dBefore)} over the three years before.
   </script>
 
   <script id="load_maplibre" type="module" hidden>
     const maplibregl = await import("maplibre-gl");
+    const cssUrl = await FileAttachment("vendor/maplibre-gl.css").url();
+    display(html`<link rel="stylesheet" href="${cssUrl}">`);
   </script>
 
-  <script id="maplibre_css" type="text/html">
-    <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.21.1/dist/maplibre-gl.css" />
-  </script>
-
-  <script id="load_data" type="module" hidden>
+  <script id="load_files" type="module" hidden>
     const pipelines = await FileAttachment("../data/pipelines.geojson").json();
-    const locations = await FileAttachment("../data/locations.geojson").json();
-    const spills = await FileAttachment("../data/spills.json").json();
-  </script>
-
-  <script id="show_spills" type="module" hidden>
-    const showSpills = view(Inputs.toggle({label: "Show oil spills", value: true}));
+    const emit = await FileAttachment("../data/emit.json").json();
+    const overlays = await FileAttachment("../data/overlays.json").json();
+    const hotspots = await FileAttachment("../data/s2/hotspots.geojson").json();
+    const targets = await FileAttachment("../data/s1/targets.geojson").json();
+    const emitUrl = await FileAttachment("assets/emit_bille_20260221.png").url();
+    const emitBugumaUrl = await FileAttachment("assets/emit_buguma_20241218.png").url();
+    const s2Url = await FileAttachment("assets/s2_dndvi.png").url();
+    const s1Url = await FileAttachment("assets/s1_dvv.png").url();
+    const rgb = await FileAttachment("../data/rgb.json").json();
+    const rgbUrls = {"2023-12-13": await FileAttachment("assets/rgb_2023-12-13.png").url(), "2024-12-22": await FileAttachment("assets/rgb_2024-12-22.png").url(), "2026-03-07": await FileAttachment("assets/rgb_2026-03-07.png").url()};
   </script>
 
   <script id="map_styles" type="text/html">
     <style>
-      .maplibregl-map { font-family: inherit; }
-      .maplibregl-popup-content {
-        background: #1a1a1a;
-        color: #e0e0e0;
-        border-radius: 4px;
-        padding: 8px 12px;
-        font-size: 12px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.5);
-      }
-      .maplibregl-popup-content b { color: #f0c808; }
-      .maplibregl-popup-tip { border-top-color: #1a1a1a; }
-      .maplibregl-popup-anchor-bottom .maplibregl-popup-tip { border-top-color: #1a1a1a; }
-      .maplibregl-popup-anchor-top .maplibregl-popup-tip { border-bottom-color: #1a1a1a; }
-      .maplibregl-popup-anchor-left .maplibregl-popup-tip { border-right-color: #1a1a1a; }
-      .maplibregl-popup-anchor-right .maplibregl-popup-tip { border-left-color: #1a1a1a; }
-      .map-container {
-        width: 100%;
-        height: 750px;
-        border-radius: 4px;
-        overflow: hidden;
-      }
-      .legend {
-        display: flex;
-        gap: 20px;
-        flex-wrap: wrap;
-        font-size: 13px;
-        margin-top: 4px;
-        color: #aaa;
-      }
-      .legend-line {
-        display: inline-block;
-        width: 20px;
-        height: 3px;
-        vertical-align: middle;
-        margin-right: 4px;
-      }
-      .legend-line--gas { background: #e45756; }
-      .legend-line--oil { background: #999; }
-      .legend-dot {
-        display: inline-block;
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        vertical-align: middle;
-        margin-right: 4px;
-      }
-      .legend-dot--spill { background: #ff6b35; opacity: 0.6; }
-      .legend-dot--location { background: #f0c808; }
-      .legend-dot--bille { background: #ff4136; }
+      .maplibregl-map { font-family: inherit; font-size: 11px; }
+      .maplibregl-popup-content { background: #000; color: #fff; border: 1px solid #808080; border-radius: 0; padding: 8px 10px; font-size: 11px; line-height: 1.4; }
+      .maplibregl-popup-content b { color: #FFCF3F; }
+      .maplibregl-popup-tip { display: none; }
+      .map-frame { width: 100%; height: 720px; overflow: hidden; position: relative; }
+      .map-key { position: absolute; top: 10px; left: 10px; background: #000; border: 1px solid #808080; padding: 15px; font-size: 11px; color: #fff; max-width: 250px; }
+      .map-key label { display: flex; align-items: center; gap: 6px; cursor: pointer; margin: 2px 0; }
+      .map-key input { margin: 0; }
+      .map-key .k { display: inline-block; width: 12px; height: 12px; }
+      .map-key .head { color: #808080; margin: 6px 0 2px; }
     </style>
   </script>
 
-  <script id="legend" type="text/html">
-    <div class="legend">
-      <span><span class="legend-line legend-line--gas"></span> Gas pipeline</span>
-      <span><span class="legend-line legend-line--oil"></span> Oil pipeline</span>
-      <span><span class="legend-dot legend-dot--spill"></span> Oil spill (NOSDRA)</span>
-      <span><span class="legend-dot legend-dot--location"></span> Key location</span>
-      <span><span class="legend-dot legend-dot--bille"></span> Bille Town</span>
-    </div>
-  </script>
-
   <script id="map" type="module">
-    const spillsGeoJSON = {
-      type: "FeatureCollection",
-      features: spills.map(s => ({
-        type: "Feature",
-        geometry: {type: "Point", coordinates: [s.lon, s.lat]},
-        properties: s
-      }))
+    const town = [6.8888, 4.5763];
+    const shapes = {
+      diamond: (c, ctx, s) => { ctx.moveTo(s / 2, 1); ctx.lineTo(s - 1, s / 2); ctx.lineTo(s / 2, s - 1); ctx.lineTo(1, s / 2); ctx.closePath(); },
+      square: (c, ctx, s) => ctx.rect(2, 2, s - 4, s - 4),
+      triangle: (c, ctx, s) => { ctx.moveTo(s / 2, 1); ctx.lineTo(s - 1, s - 2); ctx.lineTo(1, s - 2); ctx.closePath(); }
     };
+    const icon = (shape, color, s = 28) => {
+      const c = document.createElement("canvas"); c.width = c.height = s;
+      const ctx = c.getContext("2d"); ctx.beginPath(); shapes[shape](c, ctx, s);
+      ctx.fillStyle = color; ctx.fill(); ctx.lineWidth = 2; ctx.strokeStyle = "#000"; ctx.stroke();
+      return ctx.getImageData(0, 0, s, s);
+    };
+    const fc = (rows, props) => ({type: "FeatureCollection", features: rows.map(r => ({type: "Feature", geometry: {type: "Point", coordinates: [r.lon, r.lat]}, properties: props(r)}))});
+    const active = f => f.last_seen && new Date(f.last_seen) >= new Date("2025-10-01");
 
-    const div = display(html`<div class="map-container"></div>`);
-
+    const frame = display(html`<div class="map-frame"></div>`);
     const map = new maplibregl.Map({
-      container: div,
-      style: {
-        version: 8,
-        sources: {
-          satellite: {
-            type: "raster",
-            tiles: ["https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"],
-            tileSize: 256,
-            attribution: "Esri"
-          }
-        },
-        layers: [{
-          id: "satellite",
-          type: "raster",
-          source: "satellite",
-          paint: {
-            "raster-saturation": -1,
-            "raster-brightness-max": 0.55,
-            "raster-contrast": 0.15
-          }
-        }]
-      },
-      center: [6.8888, 4.5763],
-      zoom: 11,
-      maxZoom: 16
+      container: frame, center: [6.8888, 4.566], zoom: 12.3, maxZoom: 17, attributionControl: {compact: true},
+      canvasContextAttributes: {preserveDrawingBuffer: true},
+      style: {version: 8, glyphs: "https://demotiles.maplibre.org/font/{fontstack}/{range}.pbf",
+        sources: {satellite: {type: "raster", tiles: ["https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"], tileSize: 256, attribution: "Esri"}},
+        layers: [{id: "satellite", type: "raster", source: "satellite", paint: {"raster-saturation": -1, "raster-brightness-max": 0.75}}]}
     });
+    map.addControl(new maplibregl.NavigationControl({showCompass: false}), "top-right");
 
-    map.addControl(new maplibregl.NavigationControl(), "top-right");
-
+    const layers = [];
     map.on("load", () => {
+      for (const [k, sh, col] of [["well-pa", "diamond", "#808080"], ["well", "diamond", "#FFCF3F"], ["facility", "square", "#FFFFFF"], ["flare-on", "triangle", "#F52E2E"], ["flare-off", "triangle", "#808080"]])
+        map.addImage(k, icon(sh, col), {pixelRatio: 2});
+
       map.addSource("pipelines", {type: "geojson", data: pipelines});
-      map.addSource("spills", {type: "geojson", data: spillsGeoJSON});
-      map.addSource("locations", {type: "geojson", data: locations});
+      map.addSource("wells", {type: "geojson", data: fc(wellsAll, w => ({...w, icon: w.status === "PA" ? "well-pa" : "well", label: w.name.replace(/-0*/g, " ").replace("CAWTHORNE CHANNEL", "CAWC")}))});
+      map.addSource("facilities", {type: "geojson", data: fc(facilities, f => ({...f, icon: "facility"}))});
+      map.addSource("flares", {type: "geojson", data: fc(flareSites, f => ({...f, icon: active(f) ? "flare-on" : "flare-off"}))});
+      map.addSource("incidents", {type: "geojson", data: fc(incidents, r => r)});
+      map.addSource("plumes", {type: "geojson", data: fc(plumes, r => r)});
+      map.addSource("seeps", {type: "geojson", data: fc(seeps, r => r)});
+      map.addSource("town", {type: "geojson", data: fc([{lon: town[0], lat: town[1], name: "Bille Town"}], r => r)});
+      map.addSource("hotspots", {type: "geojson", data: hotspots});
+      map.addSource("targets", {type: "geojson", data: targets});
+      map.addSource("emit", {type: "image", url: emitUrl, coordinates: emit.bille_20260221.bounds});
+      map.addSource("emit-buguma", {type: "image", url: emitBugumaUrl, coordinates: emit.buguma_20241218.bounds});
+      for (const d of Object.keys(rgb)) map.addSource("rgb-" + d, {type: "image", url: rgbUrls[d], coordinates: rgb[d].bounds});
+      if (overlays.s2_dndvi) map.addSource("s2", {type: "image", url: s2Url, coordinates: overlays.s2_dndvi.bounds});
+      if (overlays.s1_dvv) map.addSource("s1", {type: "image", url: s1Url, coordinates: overlays.s1_dvv.bounds});
 
-      map.addLayer({
-        id: "pipelines-oil",
-        type: "line",
-        source: "pipelines",
-        filter: ["==", ["get", "fluid"], "OIL"],
-        paint: {"line-color": "#999", "line-width": 1.5, "line-opacity": 0.7}
-      });
-      map.addLayer({
-        id: "pipelines-gas",
-        type: "line",
-        source: "pipelines",
-        filter: ["==", ["get", "fluid"], "GAS"],
-        paint: {"line-color": "#e45756", "line-width": 2, "line-opacity": 0.85}
-      });
-      map.addLayer({
-        id: "pipelines-other",
-        type: "line",
-        source: "pipelines",
-        filter: ["all", ["!=", ["get", "fluid"], "OIL"], ["!=", ["get", "fluid"], "GAS"]],
-        paint: {"line-color": "#7f7f7f", "line-width": 1.5, "line-opacity": 0.6}
-      });
+      const add = (id, def, label, key, on = true) => { map.addLayer({id, ...def, layout: {...(def.layout ?? {}), visibility: on ? "visible" : "none"}}); layers.push({id, label, key, on}); };
+      for (const d of Object.keys(rgb)) add("rgb-" + d, {type: "raster", source: "rgb-" + d, paint: {"raster-opacity": 1}}, `Sentinel-2 true colour, ${new Date(d).toLocaleDateString("en-GB", {day: "numeric", month: "long", year: "numeric"})}`, '<span class="k" style="background:#2b3a2b"></span>', false);
+      if (overlays.s2_dndvi) add("s2", {type: "raster", source: "s2", paint: {"raster-opacity": 0.85}}, "Sentinel-2 NDVI change, dry season 2025-26 v 2023-25, relative to the scene (red = loss)", '<span class="k" style="background:#d62728"></span>', false);
+      if (overlays.s1_dvv) add("s1", {type: "raster", source: "s1", paint: {"raster-opacity": 0.85}}, "Sentinel-1 backscatter change, Oct 2025-Mar 2026 v year before (orange = new bright target)", '<span class="k" style="background:#ff7f0e"></span>', false);
+      add("emit", {type: "raster", source: "emit", paint: {"raster-opacity": 0.9}}, "EMIT methane enhancement, 21 February 2026 (yellow to red, 500-3000 ppm·m)", '<span class="k" style="background:linear-gradient(90deg,#ffdc00,#f00)"></span>', false);
+      add("emit-buguma", {type: "raster", source: "emit-buguma", paint: {"raster-opacity": 0.9}}, "EMIT methane enhancement at Buguma, 18 December 2024", '<span class="k" style="background:linear-gradient(90deg,#ffdc00,#f00)"></span>', false);
+      add("pipelines-oil", {type: "line", source: "pipelines", filter: ["!=", ["get", "fluid"], "GAS"], paint: {"line-color": "#808080", "line-width": 1.5}}, "Oil pipeline (MapStand)", '<span class="k" style="height:2px;background:#808080"></span>');
+      add("pipelines-gas", {type: "line", source: "pipelines", filter: ["==", ["get", "fluid"], "GAS"], paint: {"line-color": "#FD7700", "line-width": 2}}, "Gas pipeline (MapStand)", '<span class="k" style="height:2px;background:#FD7700"></span>');
+      add("wells", {type: "symbol", source: "wells", layout: {"icon-image": ["get", "icon"], "icon-size": 0.75, "icon-allow-overlap": true, "text-field": ["step", ["zoom"], "", 13, ["get", "label"]], "text-size": 11, "text-offset": [0.9, 0], "text-anchor": "left", "text-font": ["Noto Sans Regular"]}, paint: {"text-color": "#fff", "text-halo-color": "#000", "text-halo-width": 1.5}}, "Well: yellow diamond, grey if plugged and abandoned (MapStand)", '<span class="k" style="background:#FFCF3F;transform:rotate(45deg) scale(.8)"></span>');
+      add("facilities", {type: "symbol", source: "facilities", layout: {"icon-image": "facility", "icon-size": 0.7, "icon-allow-overlap": true}}, "Flow station (OGIM)", '<span class="k" style="background:#fff"></span>');
+      add("flares", {type: "symbol", source: "flares", layout: {"icon-image": ["get", "icon"], "icon-size": 0.8, "icon-allow-overlap": true, "text-field": ["coalesce", ["get", "name"], ""], "text-size": 11, "text-offset": [1, 0], "text-anchor": "left", "text-font": ["Noto Sans Regular"], "text-optional": true}, paint: {"text-color": "#fff", "text-halo-color": "#000", "text-halo-width": 1.5}}, "VIIRS flare site: red if lit since October 2025, grey if dormant", '<span class="k" style="background:#F52E2E;clip-path:polygon(50% 0,100% 100%,0 100%)"></span>');
+      add("incidents", {type: "circle", source: "incidents", paint: {"circle-radius": 5, "circle-color": "#F842D9", "circle-opacity": 0.8, "circle-stroke-color": "#000", "circle-stroke-width": 1}}, "NOSDRA incident since 2024", '<span class="k" style="border-radius:50%;background:#F842D9"></span>');
+      add("plumes", {type: "circle", source: "plumes", paint: {"circle-radius": ["interpolate", ["linear"], ["coalesce", ["get", "rate_kg_h"], 300], 200, 5, 2000, 12], "circle-color": "#00ECEC", "circle-opacity": 0.6, "circle-stroke-color": "#000", "circle-stroke-width": 1}}, "Methane plume detection (EMIT, Tanager, TROPOMI)", '<span class="k" style="border-radius:50%;background:#00ECEC"></span>');
+      add("hotspots", {type: "circle", source: "hotspots", paint: {"circle-radius": ["interpolate", ["linear"], ["get", "ha"], 0.2, 4, 5, 12], "circle-color": "rgba(0,0,0,0)", "circle-stroke-color": "#d62728", "circle-stroke-width": 2}}, "Sentinel-2 vegetation-loss cluster", '<span class="k" style="border-radius:50%;border:2px solid #d62728"></span>', false);
+      add("targets", {type: "circle", source: "targets", paint: {"circle-radius": ["interpolate", ["linear"], ["get", "ha"], 0.2, 4, 5, 12], "circle-color": "rgba(0,0,0,0)", "circle-stroke-color": "#ff7f0e", "circle-stroke-width": 2}}, "Sentinel-1 new bright target", '<span class="k" style="border-radius:50%;border:2px solid #ff7f0e"></span>', false);
+      map.addLayer({id: "town", type: "symbol", source: "town", layout: {"text-field": ["get", "name"], "text-size": 12, "text-offset": [0, 1.2], "text-anchor": "top", "text-font": ["Open Sans Semibold"]}, paint: {"text-color": "#fff", "text-halo-color": "#000", "text-halo-width": 1.5}});
+      add("seeps", {type: "circle", source: "seeps", paint: {"circle-radius": ["case", ["get", "first"], 8, 5], "circle-color": "#fff", "circle-stroke-color": "#000", "circle-stroke-width": 1.5}}, "Reported gas seep, larger = first sighting (SOMO, approximate)", '<span class="k" style="border-radius:50%;background:#fff"></span>');
 
-      map.addLayer({
-        id: "spills",
-        type: "circle",
-        source: "spills",
-        paint: {
-          "circle-radius": 3,
-          "circle-color": "#ff6b35",
-          "circle-opacity": 0.4,
-          "circle-stroke-width": 0
-        },
-        layout: {visibility: showSpills ? "visible" : "none"}
-      });
-
-      map.addLayer({
-        id: "locations-circle",
-        type: "circle",
-        source: "locations",
-        paint: {
-          "circle-radius": ["case", ["==", ["get", "name"], "Bille Town"], 8, 5],
-          "circle-color": ["case", ["==", ["get", "name"], "Bille Town"], "#ff4136", "#f0c808"],
-          "circle-stroke-color": "#000",
-          "circle-stroke-width": 1
-        }
-      });
-      map.addLayer({
-        id: "locations-label",
-        type: "symbol",
-        source: "locations",
-        layout: {
-          "text-field": ["get", "name"],
-          "text-size": 12,
-          "text-offset": [0, -1.2],
-          "text-anchor": "bottom",
-          "text-font": ["Open Sans Bold"]
-        },
-        paint: {
-          "text-color": "#f0c808",
-          "text-halo-color": "#111",
-          "text-halo-width": 2
-        }
-      });
+      const key = html`<div class="map-key"><div class="head">Layers</div>${layers.map(l => {
+        const cb = html`<input type="checkbox" ${l.on ? "checked" : ""}>`;
+        cb.onchange = () => map.setLayoutProperty(l.id, "visibility", cb.checked ? "visible" : "none");
+        const sw = Object.assign(document.createElement("span"), {innerHTML: l.key});
+        return html`<label>${cb}${sw}<span>${l.label}</span></label>`;
+      })}</div>`;
+      frame.appendChild(key);
 
       const popup = new maplibregl.Popup({closeButton: false, closeOnClick: false, maxWidth: "280px"});
-
-      for (const layerId of ["pipelines-oil", "pipelines-gas", "pipelines-other"]) {
-        map.on("mouseenter", layerId, (e) => {
-          map.getCanvas().style.cursor = "pointer";
-          const p = e.features[0].properties;
-          popup.setLngLat(e.lngLat)
-            .setHTML(`<b>${p.name || "Unknown pipeline"}</b><br>${p.fluid || ""} · ${p.status || ""}`)
-            .addTo(map);
-        });
-        map.on("mouseleave", layerId, () => {
-          map.getCanvas().style.cursor = "";
-          popup.remove();
-        });
+      const text = {
+        wells: p => `<b>${p.name}</b><br>${p.status ?? "status unknown"} · ${p.type ?? ""}<br>completed ${p.completed ? new Date(p.completed).getUTCFullYear() : "?"} · ${p.depth_m ? p.depth_m + " m" : ""}<br>${p.operator ?? ""} · ${p.km} km from town`,
+        facilities: p => `<b>${p.name}</b><br>${p.operator ?? ""} · ${p.km} km from town`,
+        flares: p => `<b>${p.name ?? "Flare site " + p.id}</b><br>${p.detail}<br>${p.detections} flare-nights, ${new Date(p.first_seen).getUTCFullYear()} to ${new Date(p.last_seen).toLocaleDateString("en-GB", {month: "short", year: "numeric"})}<br>${p.km} km from town`,
+        incidents: p => `<b>${p.location}</b><br>${new Date(p.date).toLocaleDateString("en-GB")} · ${p.company}<br>cause ${p.cause} · ${p.contaminant ?? ""} ${p.quantity ? p.quantity + " bbl" : ""}`,
+        plumes: p => `<b>${p.provider} · ${p.satellite}</b><br>${new Date(p.date).toLocaleDateString("en-GB")} · ${p.rate_kg_h ? p.rate_kg_h + " kg/h" : "unquantified"}<br>${p.km} km from town`,
+        seeps: p => `<b>${p.name}</b><br>${p.first ? "first sighting, 25 October 2025" : "reported seep"}<br>position approximate`,
+        hotspots: p => `<b>Vegetation loss</b><br>${p.ha} ha · mean NDVI change ${p.mean}<br>${p.km_from_seeps} km from the seeps`,
+        targets: p => `<b>New radar target</b><br>${p.ha} ha · +${p.mean} dB<br>${p.km_from_seeps} km from the seeps`
+      };
+      for (const id of Object.keys(text)) {
+        map.on("mouseenter", id, e => { map.getCanvas().style.cursor = "pointer"; popup.setLngLat(e.lngLat).setHTML(text[id](e.features[0].properties)).addTo(map); });
+        map.on("mouseleave", id, () => { map.getCanvas().style.cursor = ""; popup.remove(); });
       }
-
-      map.on("mouseenter", "spills", (e) => {
-        map.getCanvas().style.cursor = "pointer";
-        const p = e.features[0].properties;
-        popup.setLngLat(e.lngLat)
-          .setHTML(`<b>${p.location || ""}</b><br>${p.date} · ${p.company}<br>Cause: ${p.cause} · ${p.quantity} bbl`)
-          .addTo(map);
-      });
-      map.on("mouseleave", "spills", () => {
-        map.getCanvas().style.cursor = "";
-        popup.remove();
-      });
     });
   </script>
 
+  <script id="map_caption" type="text/markdown">
+    *Imagery: Esri. Seep positions are digitised from the SOMO briefing map and are accurate to roughly 200 m; Dr Numbere's report holds the surveyed coordinates.*
+  </script>
+
+  <script id="rule_1" type="text/html"><hr></script>
+
+  <script id="flaring_chart" type="module">
+    const marks = [
+      {date: "2024-04-13", label: "Awoba restart"},
+      {date: "2024-12-21", label: "Buguma well 8 blowout"},
+      {date: "2025-10-06", label: "FSO Cawthorne"},
+      {date: "2025-10-25", label: "Bille seeps reported"}
+    ].map(m => ({...m, date: new Date(m.date)}));
+    const rows = flaring.map(r => ({...r, month: new Date(r.month)}));
+    display(Plot.plot({
+      title: "Flaring at the facilities nearest Bille",
+      subtitle: "VIIRS Nightfire flare-nights per month, 2023 to August 2026",
+      width, height: 360, marginRight: 20,
+      x: {type: "utc", label: null}, y: {label: "flare-nights per month", grid: true},
+      color: {legend: true, domain: ["Awoba flow station", "Cawthorne Channel 2", "Cawthorne Channel 3 (Akaso)", "Idama", "Krakama flow station"], range: ["#F28320", "#8A55B8", "#62BD67", "#F1C542", "#DB4848"]},
+      marks: [
+        Plot.ruleX(marks, {x: "date", stroke: "#4C4C4C"}),
+        Plot.text(marks, {x: "date", text: "label", frameAnchor: "top", rotate: -90, dx: -6, dy: 4, textAnchor: "end", fill: "#4C4C4C", fontSize: 10}),
+        Plot.line(rows, {x: "month", y: "nights", stroke: "site", curve: "step", strokeWidth: 1.5, tip: true}),
+        Plot.ruleY([0])
+      ]
+    }));
+  </script>
+
+  <script id="flaring_caption" type="text/markdown">
+    *Source: EOG VIIRS Nightfire through the Data Desk archive; a flare-night is one night on which at least one satellite fitted a flare at the site. Krakama flow station, 2.8 km from the town, has not flared since June 2024.*
+  </script>
+
+  <script id="rule_2" type="text/html"><hr></script>
+
+  <script id="s1_rows" type="module" hidden>
+    const s1raw = await FileAttachment("../data/s1/wells.parquet").parquet();
+    const near = new Set([...wellsNear.map(w => w.name), "Krakama flow station", "Awoba flow station"]);
+    const s1 = Array.from(s1raw, r => ({...r, date: new Date(r.date)})).filter(r => near.has(r.site));
+    const base = d3.rollup(s1.filter(r => r.date < new Date("2025-10-01")), v => d3.median(v, r => r.vv_max), r => r.site);
+    const s1n = s1.map(r => ({...r, dvv: r.vv_max - base.get(r.site)}));
+    const s1sites = Array.from(d3.group(s1n, r => r.site), ([site, v]) => ({site, peak: d3.max(v.filter(r => r.date >= new Date("2025-10-01")), r => r.dvv)})).sort((a, b) => d3.descending(a.peak, b.peak)).map(d => d.site);
+  </script>
+
+  <script id="s1_chart" type="module">
+    display(Plot.plot({
+      title: "Radar brightness at each well and flow station",
+      subtitle: "Sentinel-1 peak VV backscatter within 50 m of each well and flow station within 8 km, relative to its median before October 2025",
+      width, height: 34 * s1sites.length + 80, marginLeft: 170,
+      x: {type: "utc", label: null}, y: {domain: [-6, 12], axis: null},
+      fy: {domain: s1sites, label: null, axis: "left"},
+      color: {legend: true, label: "relative orbit", type: "categorical", range: ["#F28320", "#8A55B8", "#62BD67", "#F1C542"]},
+      marks: [
+        Plot.frame({stroke: "#4C4C4C"}),
+        Plot.ruleY([0], {stroke: "#4C4C4C"}),
+        Plot.ruleY([6], {stroke: "#4C4C4C", strokeDasharray: "2,3"}),
+        Plot.ruleX([new Date("2025-10-25")], {stroke: "#DB4848"}),
+        Plot.dot(s1n, {x: "date", y: "dvv", fy: "site", fill: "orbit", r: 1.5, tip: true})
+      ]
+    }));
+  </script>
+
+  <script id="s1_caption" type="text/markdown">
+    *Source: Sentinel-1 RTC through Microsoft Planetary Computer, 20 m, January 2024 to August 2026. Each panel runs from -6 to +12 dB; the dashed line is +6 dB, the level of a moored vessel or a rig. The red rule is the first seep report. Sites are ordered by their largest step after it.*
+  </script>
+
+  <script id="rule_3" type="text/html"><hr></script>
+
+  <script id="s2_rows" type="module" hidden>
+    const s2raw = await FileAttachment("../data/s2/summary.parquet").parquet();
+    const s2 = Array.from(s2raw, r => ({...r, date: new Date(r.date)})).filter(r => r.valid > 0.1).sort((a, b) => a.date - b.date);
+  </script>
+
+  <script id="s2_chart" type="module">
+    const diff = s2.filter(r => r.ndvi_near != null && r.ndvi_control != null).map(r => ({date: r.date, d: r.ndvi_near - r.ndvi_control, dred: r.red_water_near != null && r.red_water_control != null ? r.red_water_near - r.red_water_control : null}));
+    const common = {width, height: 260, x: {type: "utc", label: null}};
+    display(Plot.plot({...common,
+      title: "Mangrove greenness near the seeps, relative to a control ring",
+      subtitle: "Sentinel-2 mean NDVI within 1.5 km of the seeps minus the mean in a ring 4 to 6 km away, per scene, with a 7-scene moving median",
+      y: {label: "NDVI difference", grid: true},
+      marks: [Plot.ruleY([0], {stroke: "#4C4C4C"}), Plot.ruleX([new Date("2025-10-25")], {stroke: "#DB4848"}), Plot.dot(diff, {x: "date", y: "d", fill: "#F1C542", r: 2.5, tip: true}), Plot.lineY(diff, Plot.windowY({k: 7, reduce: "median"}, {x: "date", y: "d", stroke: "#F1C542", strokeWidth: 2}))]
+    }));
+    display(Plot.plot({...common,
+      title: "Water reflectance near the seeps, relative to the control ring",
+      subtitle: "Sentinel-2 mean red-band reflectance of water pixels within 1.5 km of the seeps minus the control ring; turbid, oily or foamy water reflects more",
+      y: {label: "red reflectance difference", grid: true},
+      marks: [Plot.ruleY([0], {stroke: "#4C4C4C"}), Plot.ruleX([new Date("2025-10-25")], {stroke: "#DB4848"}), Plot.dot(diff.filter(r => r.dred != null), {x: "date", y: "dred", fill: "#00ECEC", r: 2.5, tip: true}), Plot.lineY(diff.filter(r => r.dred != null), Plot.windowY({k: 7, reduce: "median"}, {x: "date", y: "dred", stroke: "#00ECEC", strokeWidth: 2}))]
+    }));
+  </script>
+
+  <script id="s2_caption" type="text/markdown">
+    *Source: Sentinel-2 L2A through the AWS open archive, 20 m, October 2022 to August 2026, scene-classification masked. Cloud leaves few usable scenes from May to October.*
+  </script>
+
+  <script id="rule_4" type="text/html"><hr></script>
+
+  <script id="wells_table" type="module">
+    display(html`<h2>Wells within 8 km of Bille Town</h2>`);
+    display(Inputs.table(wellsNear.map(w => ({...w, completed: w.completed ? new Date(w.completed).getUTCFullYear() : null})), {
+      columns: ["name", "km", "status", "type", "completed", "depth_m", "field", "operator"],
+      header: {name: "Well", km: "km", status: "Status", type: "Type", completed: "Completed", depth_m: "Depth (m)", field: "Field", operator: "Operator"},
+      rows: 30, width: {name: 160, operator: 240}
+    }));
+  </script>
+
+  <script id="wells_caption" type="text/markdown">
+    *Source: MapStand wellheader layer. Status and operator are MapStand attributes and lag reality: NUPRC lists no production from the Krakama field since 2023, and Eroton lost the operatorship in 2023.*
+  </script>
+
+  <script id="rule_5" type="text/html"><hr></script>
+
+  <script id="incidents_table" type="module">
+    display(html`<h2>Regulator incident records within 20 km since 2024</h2>`);
+    display(Inputs.table(incidents.map(r => ({...r, date: new Date(r.date)})), {
+      columns: ["date", "km", "company", "location", "cause", "contaminant", "quantity"],
+      header: {date: "Date", km: "km", company: "Company", location: "Location", cause: "Cause", contaminant: "Contaminant", quantity: "bbl"},
+      format: {date: d => d.toLocaleDateString("en-GB")}, rows: 35, width: {location: 380}
+    }));
+  </script>
+
+  <script id="incidents_caption" type="text/markdown">
+    *Source: NOSDRA oil spill monitor. Cause codes: sab sabotage, eqf equipment failure, cor corrosion, ome operational error, ytd yet to be determined. Positions are the operator's report and can be several km off.*
+  </script>
+
+  <script id="rule_6" type="text/html"><hr></script>
+
+  <script id="events_table" type="module">
+    display(html`<h2>Timeline</h2>`);
+    display(Inputs.table(events.map(r => ({...r, date: new Date(r.date)})), {columns: ["date", "event", "source"], header: {date: "Date", event: "Event", source: "Source"}, format: {date: d => d.toLocaleDateString("en-GB")}, rows: 30, width: {event: 520, source: 220}}));
+  </script>
+
+  <script id="rule_7" type="text/html"><hr></script>
+
+  <script id="method" type="text/markdown">
+    ## Method and limits
+
+    - Source: wells and pipelines from MapStand (retrieved ${dateText}); flow stations from OGIM; flare sites and nightly detections from EOG VIIRS Nightfire and methane plumes from IMEO, Carbon Mapper, SRON and Nature Trace, all through the Data Desk archive; incidents from NOSDRA; seep positions from the SOMO briefing map; EMIT L2B methane enhancement from NASA LP DAAC; Sentinel-1 RTC from Microsoft Planetary Computer; Sentinel-2 L2A from the AWS open archive.
+    - Matching: distances are from the OSM town node (4.5763 N, 6.8888 E). A flare site is a facility when a flow station or a well cluster sits within 700 m.
+    - Estimate: the radar series is the peak VV in a 5 by 5 pixel window (100 m) minus that site's median before October 2025, so a persistent structure reads near zero and a new one as a positive step. The NDVI series uses scene-classification classes 4, 5 and 7 with NDVI above 0.2; the water series uses class 6.
+    - Window: the change overlays compare November 2025 to March 2026 with the same months one and two years earlier (Sentinel-2) or one year earlier, orbit by orbit (Sentinel-1).
+    - Coverage: EMIT crossed Bille once after the seeps began, on 21 February 2026 at 83% cloud, so the enhancement there is suggestive only. Carbon Mapper's Tanager has no scene over Bille. Sentinel-2 is cloud-free at Bille on fewer than one scene in five.
+    - Uncertainty: NOSDRA positions and MapStand well status are unverified; the seep positions are digitised from a map and not from the survey; the reported methane readings (10,000 times background; 36% of the lower explosive limit) are quoted from NOSDRA through Amnesty International and Social Action and not from a published dataset.
+  </script>
 </notebook>

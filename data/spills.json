@@ -57530,17 +57530,6 @@
     "status": "confirmed"
   },
   {
-    "lat": 5.0253806,
-    "lon": 6.692425,
-    "date": "2017-09-30",
-    "company": "TOTAL",
-    "cause": "sab",
-    "contaminant": null,
-    "quantity": "811.41",
-    "location": "12'' Obagi - Rumuekpe Exportline at KP 25.4, Rivers State.",
-    "status": "confirmed"
-  },
-  {
     "lat": 4.8814722,
     "lon": 7.0407222,
     "date": "2017-07-05",
@@ -66767,7 +66756,7 @@
     "contaminant": "cr",
     "quantity": "0.9",
     "location": "20`` KOLOCREEK-RUMUEKPE PIPELINE AT ODUA (KM 19)",
-    "status": "reviewed"
+    "status": "confirmed"
   },
   {
     "lat": 5.5544722,
@@ -68967,7 +68956,7 @@
     "contaminant": "cr",
     "quantity": "37",
     "location": "IMO RIVER WELL 63T FLOWLINE @ IGIRI-UKWU (OWAZA)",
-    "status": "reviewed"
+    "status": "confirmed"
   },
   {
     "lat": 5.3755,
@@ -69022,7 +69011,7 @@
     "contaminant": "cr",
     "quantity": "115",
     "location": "14'' Okordia-Rumuekpe pipeline at Akinima",
-    "status": "reviewed"
+    "status": "confirmed"
   },
   {
     "lat": 4.91635,
@@ -69242,7 +69231,7 @@
     "contaminant": "cr",
     "quantity": "313",
     "location": "12” Imo River – Ogale Trunkline, Owaza.",
-    "status": "reviewed"
+    "status": "confirmed"
   },
   {
     "lat": 4.81174,
@@ -69616,7 +69605,7 @@
     "contaminant": "cr",
     "quantity": "155",
     "location": "20” Rumuekpe – Nkpoku Trunkline Right of way at Ibaa",
-    "status": "reviewed"
+    "status": "confirmed"
   },
   {
     "lat": 4.95375,
@@ -71082,6 +71071,17 @@
     "status": "confirmed"
   },
   {
+    "lat": 5.03461,
+    "lon": 6.60321,
+    "date": "2019-12-07",
+    "company": "SPDC",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "85",
+    "location": "14\" Okordia-Rumuekpe Trunk Line @ Ikata. Ahoda East. R/S.",
+    "status": "confirmed"
+  },
+  {
     "lat": 4.15,
     "lon": 7.4908333,
     "date": "2019-11-11",
@@ -71695,7 +71695,7 @@
     "contaminant": "cr",
     "quantity": "473",
     "location": "14''Okordia - Rumuekpe T/L @ Ikata",
-    "status": "reviewed"
+    "status": "confirmed"
   },
   {
     "lat": 5.0158333,
@@ -71891,9 +71891,9 @@
     "company": "SPDC",
     "cause": "sab",
     "contaminant": "cr",
-    "quantity": "3",
+    "quantity": null,
     "location": "20\" KOLOCREEK-RUMUEKPE PL @ODAU (KP19)",
-    "status": "reviewed"
+    "status": "invalid"
   },
   {
     "lat": 5.3964,
@@ -73180,7 +73180,7 @@
     "contaminant": "cr",
     "quantity": "48",
     "location": "14'' OKORDIA-RUMUEKPE P/L @ AKINIMA",
-    "status": "reviewed"
+    "status": "confirmed"
   },
   {
     "lat": 4.87917,
@@ -73213,7 +73213,7 @@
     "contaminant": "cr",
     "quantity": null,
     "location": "28'' NKPOKU-BOMU PIPELINE AT RUMUEWHARA (ENEKA)",
-    "status": "reviewed"
+    "status": "confirmed"
   },
   {
     "lat": 4.7511111,
@@ -73356,7 +73356,7 @@
     "contaminant": "cr",
     "quantity": "864",
     "location": "24\"/36\" nkpoku-Bomu trans Niger pipeline right of way @atali in rivers state",
-    "status": "reviewed"
+    "status": "confirmed"
   },
   {
     "lat": 5.11758,
@@ -73367,7 +73367,7 @@
     "contaminant": "cr",
     "quantity": "0.7",
     "location": "14'' Okordia Rumuekpe Pipeline at AKALAMINI in RIVERS STATE",
-    "status": "reviewed"
+    "status": "confirmed"
   },
   {
     "lat": 4.68677,
@@ -73389,7 +73389,7 @@
     "contaminant": "cr",
     "quantity": "5",
     "location": "14'' OKORDIA RUMUEKPE TRUNKLINE AT AKALAMINI IN RIVERS STATE.",
-    "status": "reviewed"
+    "status": "confirmed"
   },
   {
     "lat": 5.11634,
@@ -73455,7 +73455,7 @@
     "contaminant": "cr",
     "quantity": "11.29",
     "location": "8\" AGBADA 2- NKPOKU MANIFOLD PIPELINE AT IGWURUTA",
-    "status": "reviewed"
+    "status": "confirmed"
   },
   {
     "lat": 5.4607222,
@@ -73675,7 +73675,7 @@
     "contaminant": "cr",
     "quantity": "24",
     "location": "20'' Okordia - Rumuekpe  Trunk Line @ Owere Were.",
-    "status": "reviewed"
+    "status": "confirmed"
   },
   {
     "lat": 5.0751111,
@@ -73752,7 +73752,7 @@
     "contaminant": "cr",
     "quantity": "390",
     "location": "14” Okordia-Rumuekpe Pipeline @ Edeoha Community, Ahoada East LGA, Rivers State",
-    "status": "reviewed"
+    "status": "confirmed"
   },
   {
     "lat": 5.0298333,
@@ -73763,7 +73763,7 @@
     "contaminant": "cr",
     "quantity": "44",
     "location": "14” Okordia-Rumuekpe Pipeline @ Edeoha Community, Ahoada East LGA, Rivers State",
-    "status": "reviewed"
+    "status": "confirmed"
   },
   {
     "lat": 5.0874167,
@@ -73796,7 +73796,7 @@
     "contaminant": "cr",
     "quantity": "127",
     "location": "Old&New 20\" Kolocreek/Rumuekpe T/L@Odau",
-    "status": "reviewed"
+    "status": "confirmed"
   },
   {
     "lat": 4.6793333,
@@ -73906,7 +73906,7 @@
     "contaminant": "cr",
     "quantity": "2",
     "location": "28\" BOMU-BONNY P/L @ OWOKIRI",
-    "status": "reviewed"
+    "status": "confirmed"
   },
   {
     "lat": 4.5520833,
@@ -74071,7 +74071,7 @@
     "contaminant": "cr",
     "quantity": "272",
     "location": "14\" OKORDIA-RUMUEKPE T/l AT ULA-IKATA, AHODA WEST L.G.A. R/S",
-    "status": "reviewed"
+    "status": "confirmed"
   },
   {
     "lat": 5.0872222,
@@ -74313,7 +74313,7 @@
     "contaminant": "cr",
     "quantity": "84",
     "location": "20” Kolo Creek/Rumuekpe Trunk line at Ihuowo Community, Ahoada East LGA, Rivers State",
-    "status": "reviewed"
+    "status": "confirmed"
   },
   {
     "lat": 5.6516667,
@@ -74533,7 +74533,7 @@
     "contaminant": "cr",
     "quantity": "2",
     "location": "12'' Oguta _Egbema Pipeline at Ukwugba",
-    "status": "reviewed"
+    "status": "confirmed"
   },
   {
     "lat": 4.91323,
@@ -74599,7 +74599,7 @@
     "contaminant": "cr",
     "quantity": "2",
     "location": "8''Nkali - Imo River 2 delivery line@muanyimochi, Odagwa",
-    "status": "reviewed"
+    "status": "confirmed"
   },
   {
     "lat": 4.4539444,
@@ -75083,7 +75083,7 @@
     "contaminant": "cr",
     "quantity": "0.4",
     "location": "4'' IMO RIVER WELL 22S @ISIETITIOHA/IGWURUKWU-OWAZA",
-    "status": "reviewed"
+    "status": "confirmed"
   },
   {
     "lat": 5.61762,
@@ -75358,7 +75358,7 @@
     "contaminant": "cr",
     "quantity": "463",
     "location": "20\" KOLOCREEK-RUMUEKPE PIPELINE @ ODAU",
-    "status": "reviewed"
+    "status": "confirmed"
   },
   {
     "lat": 5.6508333,
@@ -75578,7 +75578,7 @@
     "contaminant": "cr",
     "quantity": "4.73",
     "location": "UBIE FLOW STATION, IDU-EKPEYE, AHAODA WEST, RIVERS STATE",
-    "status": "reviewed"
+    "status": "confirmed"
   },
   {
     "lat": 5.65171,
@@ -75852,7 +75852,7 @@
     "cause": "ome",
     "contaminant": "cr",
     "quantity": "0.1",
-    "location": "Soku Well 14L Well head at Soku in Akukutoru LGA, Rivers State",
+    "location": "Soku Well 14L Well head at Soku in Akukutoru LGA, Rivers State (Closed at JIV)",
     "status": "confirmed"
   },
   {
@@ -75908,7 +75908,7 @@
     "contaminant": "cr",
     "quantity": "157",
     "location": "14\" Okordia-Rumuekpe Pipeline @ Ihuowo",
-    "status": "reviewed"
+    "status": "confirmed"
   },
   {
     "lat": 4.5543889,
@@ -75996,7 +75996,7 @@
     "contaminant": "cr",
     "quantity": "4.14",
     "location": "36''Rumuekpe-Nkpoku pipeline at Adanta Isiokpo IKWERRE LGA",
-    "status": "reviewed"
+    "status": "confirmed"
   },
   {
     "lat": 5.35061,
@@ -77305,7 +77305,7 @@
     "contaminant": "no",
     "quantity": null,
     "location": "20'' KOLOCREEK-RUMUEKPE PIPELINE AT IHUOWO COMMUNITY IN AHOADA EAST LGA",
-    "status": "confirmed"
+    "status": "invalid"
   },
   {
     "lat": 4.970394,
@@ -77700,7 +77700,7 @@
     "cause": null,
     "contaminant": "cr",
     "quantity": "11",
-    "location": "ADIBAWA FLOW STATION ENVIRONS",
+    "location": "ADIBAWA FLOW STATION AT EDAGBERI",
     "status": "confirmed"
   },
   {
@@ -77744,7 +77744,7 @@
     "cause": "sab",
     "contaminant": "cr",
     "quantity": "65",
-    "location": "14'' Okordia - Rumuekpe pipeline",
+    "location": "14'' Okordia - Rumuekpe pipeline AT IKATA",
     "status": "confirmed"
   },
   {
@@ -77844,7 +77844,7 @@
     "contaminant": "cr",
     "quantity": "2",
     "location": "6\" IMO RIVER WELL 59T FLOWLINE @ IGIRIUKWU OWAZA",
-    "status": "reviewed"
+    "status": "confirmed"
   },
   {
     "lat": 4.9893333,
@@ -77855,7 +77855,7 @@
     "contaminant": "cr",
     "quantity": "3",
     "location": "4\" IMO RIVER WELL 64L FLOWLINE @ IGIRIUKWU",
-    "status": "reviewed"
+    "status": "confirmed"
   },
   {
     "lat": 4.3022222,
@@ -78295,7 +78295,7 @@
     "contaminant": "cr",
     "quantity": "2",
     "location": "18\" Assa-Rumuekpe @ Umuodibe Community.",
-    "status": "reviewed"
+    "status": "confirmed"
   },
   {
     "lat": 4.95008,
@@ -78306,7 +78306,7 @@
     "contaminant": "cr",
     "quantity": "16",
     "location": "12\" Imo River 1 Ogale Trunkline in Umuololo Owaza community Imo State",
-    "status": "reviewed"
+    "status": "confirmed"
   },
   {
     "lat": 4.92841,
@@ -78383,7 +78383,7 @@
     "contaminant": "cr",
     "quantity": "4",
     "location": "18\" ASSA - RUMUEKPE @ EGBEDA",
-    "status": "reviewed"
+    "status": "confirmed"
   },
   {
     "lat": 5.52165,
@@ -79560,7 +79560,7 @@
     "contaminant": "no",
     "quantity": null,
     "location": "4\" Obelle - Ibaa delivery line",
-    "status": "reviewed"
+    "status": "confirmed"
   },
   {
     "lat": 5.11062657,
@@ -83858,7 +83858,7 @@
     "date": "2023-04-12",
     "company": "SPDC",
     "cause": "sab",
-    "contaminant": null,
+    "contaminant": "no",
     "quantity": null,
     "location": "36\" Rumuekpe Nkpoku pipeline at Ibaa Community",
     "status": "confirmed"
@@ -83869,7 +83869,7 @@
     "date": "2023-04-12",
     "company": "SPDC",
     "cause": "sab",
-    "contaminant": null,
+    "contaminant": "no",
     "quantity": null,
     "location": "36\" Rumuekpe Nkpoku P/L @ Ibaa commuinty",
     "status": "confirmed"
@@ -83891,7 +83891,7 @@
     "date": "2023-04-12",
     "company": "SPDC",
     "cause": "sab",
-    "contaminant": null,
+    "contaminant": "no",
     "quantity": null,
     "location": "36\" Rumuekpe Nkpoku P/L @ Ibaa community",
     "status": "confirmed"
@@ -83902,7 +83902,7 @@
     "date": "2023-04-12",
     "company": "SPDC",
     "cause": "sab",
-    "contaminant": null,
+    "contaminant": "no",
     "quantity": null,
     "location": "36\" Rumuekpe Nkpoku P/L @ Ibaa community",
     "status": "confirmed"
@@ -84243,8 +84243,8 @@
     "date": "2023-03-08",
     "company": "SPDC",
     "cause": "sab",
-    "contaminant": "N/A",
-    "quantity": "N/A",
+    "contaminant": "no",
+    "quantity": null,
     "location": "20\" KOLO CREEK- RUMUEKPE PIPELINE @ ORUMA.",
     "status": "confirmed"
   },
@@ -84320,7 +84320,7 @@
     "date": "2023-05-26",
     "company": "SPDC",
     "cause": "sab",
-    "contaminant": null,
+    "contaminant": "no",
     "quantity": null,
     "location": "24\" Nkpoku-Bomu TNP @ Babrale Tai LGA Rivers State",
     "status": "confirmed"
@@ -84606,7 +84606,7 @@
     "date": "2023-06-14",
     "company": "SPDC",
     "cause": "sab",
-    "contaminant": null,
+    "contaminant": "no",
     "quantity": null,
     "location": "24\"Ogale-Bomu pipeline at Egbalor, Eleme LGA, Rivers State.",
     "status": "confirmed"
@@ -84914,7 +84914,7 @@
     "date": "2023-04-04",
     "company": "SPDC",
     "cause": "sab",
-    "contaminant": null,
+    "contaminant": "no",
     "quantity": null,
     "location": "20'' Rumuekepe-Nkpoku Pipeline at Ibaa, Emuoha LGA, Rivers State",
     "status": "confirmed"
@@ -84925,7 +84925,7 @@
     "date": "2023-07-10",
     "company": "SPDC",
     "cause": "sab",
-    "contaminant": null,
+    "contaminant": "no",
     "quantity": null,
     "location": "36\" Rumuekpe-Nkpoku P/L@ Ibaa",
     "status": "confirmed"
@@ -84936,7 +84936,7 @@
     "date": "2023-07-10",
     "company": "SPDC",
     "cause": "sab",
-    "contaminant": null,
+    "contaminant": "no",
     "quantity": null,
     "location": "36\" Rumuekpe-Nkpoku P/L@ Ibaa",
     "status": "confirmed"
@@ -84947,7 +84947,7 @@
     "date": "2023-07-09",
     "company": "SPDC",
     "cause": "sab",
-    "contaminant": null,
+    "contaminant": "no",
     "quantity": null,
     "location": "36\" Rumuekpe-Nkpoku TNP@ Ibaa",
     "status": "confirmed"
@@ -86564,7 +86564,7 @@
     "date": "2023-01-15",
     "company": "NAOC",
     "cause": "sab",
-    "contaminant": "NIL",
+    "contaminant": "no",
     "quantity": null,
     "location": "18\" EOC OGODA PIPELINE at MGBEDE COMMUNITY ONELGA RIVERS.",
     "status": "confirmed"
@@ -87312,7 +87312,7 @@
     "date": "2023-05-29",
     "company": "NAOC",
     "cause": "sab",
-    "contaminant": "other:",
+    "contaminant": "no",
     "quantity": null,
     "location": "18'' EOC-OGODA PIPELINE AT MGBEDE ONELGA",
     "status": "confirmed"
@@ -87400,7 +87400,7 @@
     "date": "2023-05-27",
     "company": "NAOC",
     "cause": "sab",
-    "contaminant": "other:",
+    "contaminant": "no",
     "quantity": null,
     "location": "10'' OSHIE-OGODA PIPELINE AT EBRASS AWELGA RIVERS STATE",
     "status": "confirmed"
@@ -87444,7 +87444,7 @@
     "date": "2023-05-25",
     "company": "SPDC",
     "cause": "sab",
-    "contaminant": null,
+    "contaminant": "no",
     "quantity": null,
     "location": "24\" Nkpoku Bomu P/L @ Egbalor Ebubu Eleme LGA Rivers State",
     "status": "confirmed"
@@ -87741,7 +87741,7 @@
     "date": "2023-10-17",
     "company": "SPDC",
     "cause": "sab",
-    "contaminant": "other:non-leak",
+    "contaminant": "no",
     "quantity": null,
     "location": "14\" Okordia-Rumuekpe P/line, Ikata Ahoada East LGA, Rivers state",
     "status": "confirmed"
@@ -89427,7 +89427,7 @@
     "contaminant": "cr",
     "quantity": "3",
     "location": "28'' bomu-bonny tnp @ owokiri",
-    "status": "reviewed"
+    "status": "confirmed"
   },
   {
     "lat": 4.9391,
@@ -89438,7 +89438,7 @@
     "contaminant": "cr",
     "quantity": "2",
     "location": "20\" Rumuekpe - Nkpoku Trunkline(Pipeline), Mbodo Aluu.",
-    "status": "reviewed"
+    "status": "confirmed"
   },
   {
     "lat": 4.994132,
@@ -89448,8 +89448,8 @@
     "cause": "sab",
     "contaminant": "Cr",
     "quantity": "72",
-    "location": "Oil stained vegetation",
-    "status": "reviewed"
+    "location": "14\" Okordia-Rumuekpe Trunkline Right of Way at Rumuekpe in Rivers State.",
+    "status": "confirmed"
   },
   {
     "lat": 5.4078333,
@@ -89622,7 +89622,7 @@
     "date": "2023-06-19",
     "company": "SPDC",
     "cause": "sab",
-    "contaminant": null,
+    "contaminant": "no",
     "quantity": null,
     "location": "20\" kolo creek at okoma ahoada east",
     "status": "confirmed"
@@ -89633,7 +89633,7 @@
     "date": "2023-06-19",
     "company": "SPDC",
     "cause": "sab",
-    "contaminant": null,
+    "contaminant": "no",
     "quantity": null,
     "location": "20\" kolo creek at  Okoma  ahoada east",
     "status": "confirmed"
@@ -89875,7 +89875,7 @@
     "date": "2023-06-11",
     "company": "SPDC",
     "cause": "sab",
-    "contaminant": null,
+    "contaminant": "no",
     "quantity": null,
     "location": "4\" 0belle ibaa dilivery line at omugala ibaa",
     "status": "confirmed"
@@ -92493,7 +92493,7 @@
     "date": "2023-10-30",
     "company": "SPDC",
     "cause": "sab",
-    "contaminant": "non-leak",
+    "contaminant": "no",
     "quantity": null,
     "location": "24\" Ogale-Bonny @ Sime Tai LGA",
     "status": "confirmed"
@@ -93725,7 +93725,7 @@
     "date": "2023-04-04",
     "company": "SPDC",
     "cause": "sab",
-    "contaminant": null,
+    "contaminant": "no",
     "quantity": null,
     "location": "36'' Ruemekpe-Nkpoku Pipeline at Ibaa, Emuoha LGA, Rivers State",
     "status": "confirmed"
@@ -93923,7 +93923,7 @@
     "date": "2023-04-08",
     "company": "NAOC",
     "cause": "sab",
-    "contaminant": null,
+    "contaminant": "no",
     "quantity": null,
     "location": "18\" EBOCHA -OGODA PIPELINE @MGBEDE COMMUNITY ONELGA RIVERS STATE.",
     "status": "confirmed"
@@ -93978,7 +93978,7 @@
     "date": "2023-04-10",
     "company": "NAOC",
     "cause": "sab",
-    "contaminant": null,
+    "contaminant": "no",
     "quantity": null,
     "location": "MGBEDE 27T FLOWLINE AT AGGAH COMMUNITY, ONELGA RIVERS STATE",
     "status": "confirmed"
@@ -94011,7 +94011,7 @@
     "date": "2023-04-09",
     "company": "NAOC",
     "cause": "sab",
-    "contaminant": null,
+    "contaminant": "no",
     "quantity": null,
     "location": "8\" OB/OB INDORAMA NGL PIPELINE @AWARA COMMUNITY",
     "status": "confirmed"
@@ -94055,7 +94055,7 @@
     "date": "2023-04-12",
     "company": "NAOC",
     "cause": "sab",
-    "contaminant": null,
+    "contaminant": "no",
     "quantity": null,
     "location": "24\" OGODA BRASS PIPELINE @ OBODHI COMMUNITY AWELGA RIVERS STATE.",
     "status": "confirmed"
@@ -94165,7 +94165,7 @@
     "date": "2023-04-17",
     "company": "NAOC",
     "cause": "sab",
-    "contaminant": null,
+    "contaminant": "no",
     "quantity": null,
     "location": "OBIAFU 19S FLOWLINE AT OMOKU ONELGA, RIVERS STATE",
     "status": "confirmed"
@@ -94176,7 +94176,7 @@
     "date": "2023-04-17",
     "company": "NAOC",
     "cause": "sab",
-    "contaminant": null,
+    "contaminant": "no",
     "quantity": null,
     "location": "OBIAFU 19LS FLOWLINE AT OMOKU, ONELGA, RIVERS STATE.",
     "status": "confirmed"
@@ -95432,7 +95432,7 @@
     "cause": "sab",
     "contaminant": "cr",
     "quantity": "15",
-    "location": "36''IGBODO-ISIOKPO TNP @ ISIOKPO , IKWERRE LGA",
+    "location": "36''RUMUEKPE-NKPOKU PIPELINE AT OGBODO-ISIOKPO  ISIOKPO , IKWERRE LGA",
     "status": "confirmed"
   },
   {
@@ -95697,7 +95697,7 @@
     "contaminant": "cr",
     "quantity": "390",
     "location": "36'' NKPOKU-BOMU PIPELINE AT ENEKA",
-    "status": "confirmed"
+    "status": "invalid"
   },
   {
     "lat": 4.7713525,
@@ -95849,7 +95849,7 @@
     "company": "SPDC",
     "cause": "sab",
     "contaminant": "cr",
-    "quantity": null,
+    "quantity": "3",
     "location": "20'' Kolo Creek trunkline RoW @ KP 19 Odau. Obua Odual R/S.",
     "status": "confirmed"
   },
@@ -98092,10 +98092,10 @@
     "date": "2020-12-02",
     "company": "SPDC",
     "cause": "sab",
-    "contaminant": "Crude",
-    "quantity": "72",
+    "contaminant": null,
+    "quantity": null,
     "location": "14\" Okordia-Rumuekpe Trunkline Right of Way at Rumuekpe in Rivers State.",
-    "status": "confirmed"
+    "status": "invalid"
   },
   {
     "lat": 4.9703939,
@@ -99997,7 +99997,7 @@
     "cause": "sab",
     "contaminant": "cr",
     "quantity": "5",
-    "location": "36\" TNP @ Ibaa, Emohua LGA, Rivers State",
+    "location": "36\" Rumuekpe-Nkpoku TNP @ Ibaa, Emohua LGA, Rivers State",
     "status": "confirmed"
   },
   {
@@ -100413,7 +100413,7 @@
     "date": "2023-05-30",
     "company": "NAOC",
     "cause": "sab",
-    "contaminant": "NONE",
+    "contaminant": "no",
     "quantity": null,
     "location": "18\" TEBIDABA/BRASS P/L @ TEBIDABA (KAMBORO).",
     "status": "confirmed"
@@ -100446,7 +100446,7 @@
     "date": "2023-06-05",
     "company": "NAOC",
     "cause": "sab",
-    "contaminant": "NONE",
+    "contaminant": "no",
     "quantity": null,
     "location": "18\" OBAMA/BRASS P/L @ ADIKIAMA.",
     "status": "confirmed"
@@ -101802,17 +101802,6 @@
     "contaminant": "cr",
     "quantity": "4",
     "location": "34T ALAKIRI at KIRIYO COMMUNITY",
-    "status": "confirmed"
-  },
-  {
-    "lat": 4.6870833,
-    "lon": 7.0188889,
-    "date": "2024-06-02",
-    "company": "nyd",
-    "cause": "sab",
-    "contaminant": "cr",
-    "quantity": "40",
-    "location": "OML-18, ORUBIRI (ABILA) WELL 7LS.",
     "status": "confirmed"
   },
   {
@@ -103361,7 +103350,7 @@
     "date": "2023-05-03",
     "company": "NAOC",
     "cause": "sab",
-    "contaminant": null,
+    "contaminant": "no",
     "quantity": null,
     "location": "18\" TEBIDABA/BRASS PIPELINE AT ORUKIRI",
     "status": "confirmed"
@@ -104500,17 +104489,6 @@
     "status": "confirmed"
   },
   {
-    "lat": 4.5289215,
-    "lon": 6.957346,
-    "date": "2024-08-02",
-    "company": "NNPC NEOL",
-    "cause": "ytd",
-    "contaminant": "cr",
-    "quantity": null,
-    "location": "AKASO WELL 4@ KRAKRAMA COMMUNITY",
-    "status": "confirmed"
-  },
-  {
     "lat": 4.460979,
     "lon": 7.186575,
     "date": "2024-06-18",
@@ -105432,17 +105410,6 @@
     "contaminant": "cr",
     "quantity": null,
     "location": "18” Obama-Brass Pipeline at Adkiama Nembe, Bayelsa State.",
-    "status": "confirmed"
-  },
-  {
-    "lat": 4.4509722,
-    "lon": 6.2650278,
-    "date": "2024-07-12",
-    "company": "NAOC",
-    "cause": "sab",
-    "contaminant": "cr",
-    "quantity": "80",
-    "location": "18” Obama-Brass Pipeline at Oni Nembe, Bayelsa State.",
     "status": "confirmed"
   },
   {
@@ -107316,17 +107283,6 @@
     "status": "reviewed"
   },
   {
-    "lat": 4.5516944,
-    "lon": 7.0486389,
-    "date": "2025-02-19",
-    "company": "NNPC NEOL",
-    "cause": "eqf",
-    "contaminant": "cr",
-    "quantity": "1000",
-    "location": "CAWC-1 BARGING PROCESS AREA",
-    "status": "confirmed"
-  },
-  {
     "lat": 4.5502222,
     "lon": 6.96725,
     "date": "2025-02-08",
@@ -107341,7 +107297,7 @@
     "lat": 5.02598,
     "lon": 6.37449,
     "date": "2025-03-03",
-    "company": "RENAISSANCE",
+    "company": "SPDC",
     "cause": "sab",
     "contaminant": "cr",
     "quantity": "0.2",
@@ -113424,7 +113380,7 @@
     "lat": 4.6872833,
     "lon": 7.018815,
     "date": "2025-04-02",
-    "company": "NEPL",
+    "company": "NEOL",
     "cause": "sab",
     "contaminant": "cr",
     "quantity": "70",
@@ -114279,17 +114235,6 @@
     "status": "confirmed"
   },
   {
-    "lat": 4.59587,
-    "lon": 7.25773,
-    "date": "2024-10-27",
-    "company": "SPDC",
-    "cause": "sab",
-    "contaminant": "cr",
-    "quantity": "110",
-    "location": "28\" Bomu - Bonny pipeline@Bodo",
-    "status": "confirmed"
-  },
-  {
     "lat": 5.07321,
     "lon": 6.72413,
     "date": "2024-10-25",
@@ -114554,17 +114499,6 @@
     "status": "confirmed"
   },
   {
-    "lat": 4.5294444,
-    "lon": 7.0330556,
-    "date": "2025-03-23",
-    "company": "NNPC NEOL",
-    "cause": "other:",
-    "contaminant": "cr",
-    "quantity": "30.2",
-    "location": "CAWRTHORNE CHANNEL 1 AKASO WELL 10",
-    "status": "confirmed"
-  },
-  {
     "lat": 5.2468472,
     "lon": 6.6292889,
     "date": "2025-06-09",
@@ -114741,17 +114675,6 @@
     "status": "confirmed"
   },
   {
-    "lat": 4.673144,
-    "lon": 7.276492,
-    "date": "2025-05-07",
-    "company": "RENAISSANCE",
-    "cause": "eqf",
-    "contaminant": "cr",
-    "quantity": "100",
-    "location": "24\" OGALE-BOMU PIPELINE AT B. DERE.",
-    "status": "confirmed"
-  },
-  {
     "lat": 4.983742,
     "lon": 7.120012,
     "date": "2025-05-01",
@@ -114807,17 +114730,6 @@
     "status": "confirmed"
   },
   {
-    "lat": 4.7361111,
-    "lon": 7.3033333,
-    "date": "2025-04-16",
-    "company": "NEPL",
-    "cause": "sab",
-    "contaminant": "cr",
-    "quantity": "2",
-    "location": "NEPL OML11 KOROKORO WELL 9, TAI LGA",
-    "status": "confirmed"
-  },
-  {
     "lat": 4.97701293,
     "lon": 7.10796157,
     "date": "2025-04-23",
@@ -114843,7 +114755,7 @@
     "lat": 4.545131,
     "lon": 6.9609389,
     "date": "2025-04-13",
-    "company": "NEPL",
+    "company": "NEOL",
     "cause": "sab",
     "contaminant": "cr",
     "quantity": "3",
@@ -115783,7 +115695,7 @@
     "contaminant": "cr",
     "quantity": "3",
     "location": "4\" KOLO CREEK WELL 22T FLOWLINE @ IMIRINGI",
-    "status": "confirmed"
+    "status": "invalid"
   },
   {
     "lat": 4.507,
@@ -115791,7 +115703,7 @@
     "date": "2024-07-16",
     "company": "NAOC",
     "cause": "sab",
-    "contaminant": "no",
+    "contaminant": "cr",
     "quantity": "12",
     "location": "18'' TEBIDABA/BRASS PIPELINE AT LASUKUGBENE",
     "status": "confirmed"
@@ -115926,17 +115838,6 @@
     "contaminant": "cr",
     "quantity": "7.39",
     "location": "18\" ASSA-RUNUEKPE TRUNKLINE @ OCHIA",
-    "status": "confirmed"
-  },
-  {
-    "lat": 5.3594444,
-    "lon": 6.7958056,
-    "date": "2017-05-18",
-    "company": "SPDC",
-    "cause": "sab",
-    "contaminant": "cr",
-    "quantity": "7.39",
-    "location": "18\" Assa-Rumuekpe (trunkline) @ oCHIA",
     "status": "confirmed"
   },
   {
@@ -116297,7 +116198,7 @@
     "date": "2023-04-12",
     "company": "SPDC",
     "cause": "sab",
-    "contaminant": null,
+    "contaminant": "no",
     "quantity": null,
     "location": "20\" Rumuekpe Nkpoku pipeline at Ibaa community\npoint A and B",
     "status": "confirmed"
@@ -116506,7 +116407,7 @@
     "date": "2025-06-21",
     "company": "OANDO",
     "cause": "sab",
-    "contaminant": null,
+    "contaminant": "no",
     "quantity": null,
     "location": "8\"OBOB-Eleme(Indorama)NGL Delivery line at Omerelu (KP25) Ikwerre L.G.A, Rivers State.",
     "status": "confirmed"
@@ -117078,7 +116979,7 @@
     "date": "2025-09-25",
     "company": "OANDO",
     "cause": "sab",
-    "contaminant": null,
+    "contaminant": "cr",
     "quantity": "2.53",
     "location": "4'' OBIAFU 19 L AT OBIAFU FIELD, ONELGA, RIVERS STATE",
     "status": "confirmed"
@@ -117100,7 +117001,7 @@
     "date": "2025-09-15",
     "company": "NEOL",
     "cause": "sab",
-    "contaminant": null,
+    "contaminant": "no",
     "quantity": null,
     "location": "CAWTHORNE CHANNEL 1, WELL 17T 4\"FLOWLINE AT @ ILOMA, BONNY",
     "status": "confirmed"
@@ -117169,17 +117070,6 @@
     "contaminant": "no",
     "quantity": null,
     "location": "28\" NKPOKU-EBUBU TNP AT AGBONCHIA COMMUNITY, ELEME LGA, RIVERS STATE",
-    "status": "confirmed"
-  },
-  {
-    "lat": 4.81175,
-    "lon": 7.1527,
-    "date": "2025-09-16",
-    "company": "SPDC",
-    "cause": "ome",
-    "contaminant": "cr",
-    "quantity": "18",
-    "location": "Ogale-Manifold",
     "status": "confirmed"
   },
   {
@@ -117320,7 +117210,7 @@
     "date": "2025-09-22",
     "company": "RENAISSANCE",
     "cause": "sab",
-    "contaminant": "cr",
+    "contaminant": "no",
     "quantity": null,
     "location": "36'' Nkpoku-Ogale TNP @ Abonchia community",
     "status": "confirmed"
@@ -117334,17 +117224,6 @@
     "contaminant": "cr",
     "quantity": "0.012",
     "location": "8'' INKALI IMO - RIVER DELIVERY LINE",
-    "status": "confirmed"
-  },
-  {
-    "lat": 4.9839242,
-    "lon": 7.1667972,
-    "date": "2025-09-27",
-    "company": "Heirs Energies Limited",
-    "cause": "eqf",
-    "contaminant": "cr",
-    "quantity": "24.90",
-    "location": "8'' NAKI, IMO RIVER DELIVERY LINE, UMUDEKPARA",
     "status": "confirmed"
   },
   {
@@ -117667,6 +117546,17 @@
     "status": "confirmed"
   },
   {
+    "lat": 4.520342,
+    "lon": 6.49661,
+    "date": "2025-10-01",
+    "company": "Aiteo E&P",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "19",
+    "location": "10’’ Delivery Line Near Santabara Nembe LGA Bayelsa State.",
+    "status": "confirmed"
+  },
+  {
     "lat": 5.65785,
     "lon": 6.5174367,
     "date": "2025-12-01",
@@ -117760,7 +117650,7 @@
     "date": "2025-11-24",
     "company": "RENAISSANCE",
     "cause": "ome",
-    "contaminant": null,
+    "contaminant": "no",
     "quantity": null,
     "location": "24'' Ogale - Bonny P/Line @ Free Town , Bonny.",
     "status": "confirmed"
@@ -117771,7 +117661,7 @@
     "date": "2025-11-24",
     "company": "RENAISSANCE",
     "cause": "cor",
-    "contaminant": null,
+    "contaminant": "other:water leak",
     "quantity": null,
     "location": "24'' Ogale - Bonny P/line @ Okolo Launch , Bonny",
     "status": "confirmed"
@@ -118118,17 +118008,6 @@
     "status": "confirmed"
   },
   {
-    "lat": 4.954037,
-    "lon": 6.825254,
-    "date": "2025-02-23",
-    "company": "SPDC",
-    "cause": "ome",
-    "contaminant": "cr",
-    "quantity": "17",
-    "location": "36\" Rumuekpe-Nkpoku PL at Ibaa",
-    "status": "confirmed"
-  },
-  {
     "lat": 5.0258889,
     "lon": 6.7395278,
     "date": "2025-02-04",
@@ -118462,7 +118341,7 @@
     "lat": 4.7523611,
     "lon": 6.0297222,
     "date": "2026-01-04",
-    "company": "NAOC",
+    "company": "OANDO",
     "cause": "sab",
     "contaminant": "cr",
     "quantity": "0.31",
@@ -118572,9 +118451,9 @@
     "lat": 4.3887778,
     "lon": 6.2923889,
     "date": "2026-01-10",
-    "company": "NAOC",
+    "company": "OANDO",
     "cause": "sab",
-    "contaminant": null,
+    "contaminant": "cr",
     "quantity": "0.0002",
     "location": "24\" Brass Manifold -Brass in Nembe in Bayelsa state.",
     "status": "confirmed"
@@ -118654,6 +118533,1722 @@
     "contaminant": "cr",
     "quantity": "0.006",
     "location": "24'' OGODA/BRASS PIPELINE AT OKOROBA",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.8014492,
+    "lon": 7.164575,
+    "date": "2026-03-07",
+    "company": "RENAISSANCE",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "1",
+    "location": "24'' OGALE-BONNY PIPELINE @ AGBETA, ELEME LGA. RIVERS STATE",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.4481667,
+    "lon": 6.2012583,
+    "date": "2026-03-26",
+    "company": "Heritage",
+    "cause": "sab",
+    "contaminant": "no",
+    "quantity": null,
+    "location": "OLEH WELL 12 2'' GAS PIPELINE",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.57156987,
+    "lon": 6.76085124,
+    "date": "2026-01-14",
+    "company": "RENAISSANCE",
+    "cause": "eqf",
+    "contaminant": "no",
+    "quantity": null,
+    "location": "12'' Oguta-Egbema Delivery line at Ukwvgba",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.6445617,
+    "lon": 6.171135,
+    "date": "2026-05-01",
+    "company": "Heritage",
+    "cause": "eqf",
+    "contaminant": "cr",
+    "quantity": "10",
+    "location": "KOKORI FLOWSTATION EFFLUET GUTTER AT ERHOIKE",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.3926056,
+    "lon": 6.2918597,
+    "date": "2026-04-22",
+    "company": "OANDO",
+    "cause": "cor",
+    "contaminant": "cr",
+    "quantity": "5",
+    "location": "24\" Brass Manifold/Brass Pipeline at Kpongbonkiri",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.6217306,
+    "lon": 6.0718417,
+    "date": "2026-04-15",
+    "company": "RENAISSANCE",
+    "cause": "eqf",
+    "contaminant": "cr",
+    "quantity": "0.03",
+    "location": "Diebu Creek Well 15T Flowline at Peremabiri",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.734426,
+    "lon": 6.643236,
+    "date": "2026-01-26",
+    "company": "SEEPCO",
+    "cause": "eqf",
+    "contaminant": "cr",
+    "quantity": null,
+    "location": "OML 143 8” ENYIE-ASEOMUKU JETTY AT OGWU-IPELE COMMUNITY, OGBARU LGA, ANAMBRA STATE.",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.3938586,
+    "lon": 6.5980139,
+    "date": "2026-05-25",
+    "company": "OANDO",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "0.2",
+    "location": "4\"obiatu 21 F/L",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.3298644,
+    "lon": 6.2823753,
+    "date": "2026-05-22",
+    "company": "OANDO",
+    "cause": "sab",
+    "contaminant": "no",
+    "quantity": null,
+    "location": "24'' Ogoda-Brass Pipeline at Elepa/Okpoama Axis",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.3298564,
+    "lon": 6.2823664,
+    "date": "2026-05-20",
+    "company": "OANDO",
+    "cause": "eqf",
+    "contaminant": "cr",
+    "quantity": "0.031",
+    "location": "24'' Ogoda-Brass Pipeline at Elepa/Okpoama Axis",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.5997222,
+    "lon": 7.4721667,
+    "date": "2026-05-18",
+    "company": "NEPL",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "30",
+    "location": "NEPL OML 11 YORLA WELL 10",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.0354722,
+    "lon": 7.0100556,
+    "date": "2025-11-28",
+    "company": "OANDO",
+    "cause": "sab",
+    "contaminant": "no",
+    "quantity": null,
+    "location": "8\" OB/OB - ELEME (INDORAMA) NGL DELIVERY LINE ABARA COMMUNITY, ETCHE",
+    "status": "reviewed"
+  },
+  {
+    "lat": 4.73625,
+    "lon": 6.8833,
+    "date": "2024-12-01",
+    "company": "NNPC18 Operating Limited",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": null,
+    "location": "Bukuma Well 8, Bukuma Community, Degema  Local Government, Rivers State",
+    "status": "invalid"
+  },
+  {
+    "lat": 5.46497,
+    "lon": 6.76019,
+    "date": "2026-02-26",
+    "company": "RENAISSANCE",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "2205",
+    "location": "16\"  EGBEMA - ASSA  TL ROW @ ETEKWURU, OHAJI/EGBEMA LGA, IMO STATE",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.73625,
+    "lon": 6.8833,
+    "date": "2024-12-01",
+    "company": "NNPC18 Operating Limited",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": null,
+    "location": "BUKUMA WELL 8, BUKUMA, DEGEMA LGA RIVERS STATE.",
+    "status": "reviewed"
+  },
+  {
+    "lat": 5.55557,
+    "lon": 6.69266,
+    "date": "2026-02-18",
+    "company": "RENAISSANCE",
+    "cause": "sab",
+    "contaminant": "no",
+    "quantity": null,
+    "location": "10\" Egbema West - Egbema Manifold Delivery Line @ Abacheke/Mmahu Community, Ohaji Egbema LGA, Imo State.",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.5534,
+    "lon": 6.69105,
+    "date": "2026-02-18",
+    "company": "RENAISSANCE",
+    "cause": "sab",
+    "contaminant": "no",
+    "quantity": null,
+    "location": "10\" Egbema west - Egbema Manifold @ Abacheke/Mmahu community, Ohaji Egbema LGA, Imo State.",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.88721,
+    "lon": 7.068679,
+    "date": "2026-03-16",
+    "company": "RENAISSANCE",
+    "cause": "sab",
+    "contaminant": "no",
+    "quantity": null,
+    "location": "36\" nkpolu ogale pipeline rumukwurushi rivers state",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.233141,
+    "lon": 6.768368,
+    "date": "2026-03-16",
+    "company": "RENAISSANCE",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "2.84",
+    "location": "18\" Assa-Rumuekpe pipeline at Egbeda\nI",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.1044861,
+    "lon": 6.5101833,
+    "date": "2026-02-03",
+    "company": "RENAISSANCE",
+    "cause": "eqf",
+    "contaminant": "cr",
+    "quantity": "6",
+    "location": "14'' OKORDIA - RUMUEKPE PIPELINE, OSHIE, AHOADA WEST LGA",
+    "status": "reviewed"
+  },
+  {
+    "lat": 5.07513,
+    "lon": 6.55419,
+    "date": "2026-01-28",
+    "company": "RENAISSANCE",
+    "cause": "ome",
+    "contaminant": "cr",
+    "quantity": "0.5",
+    "location": "14\" Okordia rumuekpe pipeline  at oshika",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.72056,
+    "lon": 7.22295,
+    "date": "2026-01-26",
+    "company": "RENAISSANCE",
+    "cause": "sab",
+    "contaminant": "no",
+    "quantity": null,
+    "location": "28\" TNP@ EKPORO,ELEME LOCAL GOVERNMENT AREA",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.110583,
+    "lon": 6.50091,
+    "date": "2026-01-27",
+    "company": "RENAISSANCE",
+    "cause": "ome",
+    "contaminant": "cr",
+    "quantity": "1",
+    "location": "14\" Okordia - Rumuekpe pipeline, Akala-olu, Ahoada west",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.41877778,
+    "lon": 6.6585976,
+    "date": "2026-01-20",
+    "company": "RENAISSANCE",
+    "cause": "eqf",
+    "contaminant": "cr",
+    "quantity": "27",
+    "location": "8\" Belema -Sego Delivery line @Orukiri , Akuku -Toru",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.6793961,
+    "lon": 7.2665836,
+    "date": "2026-01-15",
+    "company": "RENAISSANCE",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "0.1",
+    "location": "28\" Ebubu-Bonny TNP ROW at Bdere",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.2520833,
+    "lon": 6.5256944,
+    "date": "2026-01-06",
+    "company": "RENAISSANCE",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "43",
+    "location": "4'' ADNE WELL 4L FLOWLINE AT TEIN-BISENI",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.2129722,
+    "lon": 6.5175556,
+    "date": "2026-01-01",
+    "company": "RENAISSANCE",
+    "cause": "sab",
+    "contaminant": "other: WATER",
+    "quantity": null,
+    "location": "6'' BISENI ADIBAWA BULKLINE AT BISENI",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.2129722,
+    "lon": 6.5175556,
+    "date": "2026-01-01",
+    "company": "RENAISSANCE",
+    "cause": "sab",
+    "contaminant": "no",
+    "quantity": null,
+    "location": "6'' BISENI ADIBAWA BULKLINE AT BISENI",
+    "status": "invalid"
+  },
+  {
+    "lat": 5.2129722,
+    "lon": 6.5175556,
+    "date": "2026-01-01",
+    "company": "RENAISSANCE",
+    "cause": "sab",
+    "contaminant": "no",
+    "quantity": null,
+    "location": "6'' BISENI ADIBAWA BULKLINE AT BISENI",
+    "status": "invalid"
+  },
+  {
+    "lat": 5.2129722,
+    "lon": 6.5176111,
+    "date": "2026-01-01",
+    "company": "RENAISSANCE",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "2",
+    "location": "6'' BISENI ADIBAWA TESTLINE AT BISENI",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.50853618,
+    "lon": 7.2273892,
+    "date": "2026-02-14",
+    "company": "RENAISSANCE",
+    "cause": "cor",
+    "contaminant": "cr",
+    "quantity": "18",
+    "location": "24\" OGALE BONNY PIPELINE AT OKOLO LUNCH ANDONI LGA, RIVERS STATE",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.850342,
+    "lon": 6.247369,
+    "date": "2026-03-03",
+    "company": "RENAISSANCE",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "483",
+    "location": "16'' NUN-RIVER KOLOCREEK AT AGBURA",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.0308889,
+    "lon": 6.3667306,
+    "date": "2026-02-02",
+    "company": "RENAISSANCE",
+    "cause": "sab",
+    "contaminant": "no",
+    "quantity": null,
+    "location": "Etelebou Well 12t Flowline at Ogboloma Bayelsa State.",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.48711,
+    "lon": 6.22109,
+    "date": "2026-04-08",
+    "company": "OANDO",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "4",
+    "location": "6'' OLEH  4L FLOW LINE",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.48767,
+    "lon": 6.22109,
+    "date": "2026-04-08",
+    "company": "OANDO",
+    "cause": "sab",
+    "contaminant": "ga",
+    "quantity": null,
+    "location": "6'' FLOWLINE 4S FLOWLINE AT OLEH",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.494515,
+    "lon": 7.212409,
+    "date": "2026-06-14",
+    "company": "RENAISSANCE",
+    "cause": "ome",
+    "contaminant": "Water leak",
+    "quantity": null,
+    "location": "24\" OGALE-BONNY TNP ROW AT ALASAKIRI KP44.7",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.5041215,
+    "lon": 6.7035333,
+    "date": "2026-03-04",
+    "company": "OANDO",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "0.75",
+    "location": "14\" Akri- Ebocha pipeline at Abacheke Community",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.4523444,
+    "lon": 6.8469167,
+    "date": "2026-02-05",
+    "company": "SEPLAT",
+    "cause": "eqf",
+    "contaminant": "no",
+    "quantity": "0.0000",
+    "location": "OHAJI SOUTH WELL 4 (OML 53)",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.0290547,
+    "lon": 7.0550733,
+    "date": "2026-06-16",
+    "company": "Heirs Energies Limited",
+    "cause": "sab",
+    "contaminant": "no",
+    "quantity": null,
+    "location": "Nkali Odagwa well 13s  4\" flowline",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.3889644,
+    "lon": 6.6503317,
+    "date": "2026-06-04",
+    "company": "OANDO",
+    "cause": "sab",
+    "contaminant": "co",
+    "quantity": "1.56",
+    "location": "8\" Obiafu 43/44 Pipeline @ Obiafu Field, Omoku Community",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.2507972,
+    "lon": 6.5740528,
+    "date": "2026-06-03",
+    "company": "OANDO",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "1.142",
+    "location": "4''Idu 4T Flowline,Idu field at Idu community.",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.5356944,
+    "lon": 7.0340278,
+    "date": "2026-05-28",
+    "company": "NEOL",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "20",
+    "location": "4'' AKASO 015L FLOWLINE @ ELEM KALABARI.",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.3657817,
+    "lon": 6.134185,
+    "date": "2026-05-23",
+    "company": "Heritage",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "0.013",
+    "location": "WELL 1 ORONI ELBOW RISER AT OKPOLO ENHWE",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.1128,
+    "lon": 6.5657333,
+    "date": "2026-05-07",
+    "company": "OANDO",
+    "cause": "sab",
+    "contaminant": null,
+    "quantity": null,
+    "location": "10'' OSHIE-OGODA PIPELINE @ IDU-EKPEYE",
+    "status": "reviewed"
+  },
+  {
+    "lat": 4.4088889,
+    "lon": 7.1433333,
+    "date": "2026-04-28",
+    "company": "MPN",
+    "cause": "ome",
+    "contaminant": "re",
+    "quantity": "0.1",
+    "location": "BRT Diesel Tank Area",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.2766667,
+    "lon": 7.235,
+    "date": "2026-04-26",
+    "company": "MPN",
+    "cause": "eqf",
+    "contaminant": "cr",
+    "quantity": "0.140705",
+    "location": "Ubit PP / Around Mfem DA / OML67",
+    "status": "reviewed"
+  },
+  {
+    "lat": 5.6484372,
+    "lon": 6.7882189,
+    "date": "2026-04-21",
+    "company": "NNPC ANTAN",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "0.31",
+    "location": "OSSU OBODO WELL-14/21 AT OSSU OBODO",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.5527778,
+    "lon": 7.0419444,
+    "date": "2026-04-13",
+    "company": "NEOL",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "3",
+    "location": "Well 15T 4” FL, Ilomaroru Community, Bonny LGA",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.6284411,
+    "lon": 6.2085883,
+    "date": "2026-04-12",
+    "company": "OANDO",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "0.31",
+    "location": "6\" Pirigbene/Obama Flowline at Epebu",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.27918,
+    "lon": 6.859417,
+    "date": "2026-05-31",
+    "company": "SEEPCO",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "6",
+    "location": "14'' Ukpichi-Oguali Pipeline Ihie, Ohaji/Egbema",
+    "status": "reviewed"
+  },
+  {
+    "lat": 4.5181828,
+    "lon": 6.2568186,
+    "date": "2026-04-04",
+    "company": "OANDO",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": null,
+    "location": "18' Obama/Brass Pipeline at Adikiama",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.6439167,
+    "lon": 7.075,
+    "date": "2026-03-25",
+    "company": "NEOL",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "0.4",
+    "location": "WELL 15T 4\" FL, AMANBA-KIRI, OKRIKA LGA",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.6516389,
+    "lon": 7.0316389,
+    "date": "2026-03-20",
+    "company": "NEOL",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "0.5",
+    "location": "4\" FLOW LINE AT ALAKIRI WELL 37T, VICTORIA AMA COMMUNITY, DEGEMA LGA",
+    "status": "reviewed"
+  },
+  {
+    "lat": 4.9873056,
+    "lon": 7.1581389,
+    "date": "2026-03-02",
+    "company": "Heirs Energies Limited",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "2",
+    "location": "8' NKALI-IMO RIVER DELIVERY LINE @ UMUEDE-OKPARA",
+    "status": "reviewed"
+  },
+  {
+    "lat": 4.5336806,
+    "lon": 7.0274722,
+    "date": "2026-02-28",
+    "company": "NEOL",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "88",
+    "location": "Corwethorne channel 1  akaso  well 12Ls",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.47249363,
+    "lon": 6.65756856,
+    "date": "2026-01-21",
+    "company": "RENAISSANCE",
+    "cause": "eqf",
+    "contaminant": "cr",
+    "quantity": "72",
+    "location": "8\" Belema -Sego Delivery line",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.6961944,
+    "lon": 6.4206111,
+    "date": "2026-02-11",
+    "company": "OANDO",
+    "cause": "sab",
+    "contaminant": "no",
+    "quantity": null,
+    "location": "24’’ Ogoda/Brass Pipeline @ Emago_Kugbo, Abua/Odual  Local Government Area, Rivers State.",
+    "status": "reviewed"
+  },
+  {
+    "lat": 4.6285278,
+    "lon": 6.2151111,
+    "date": "2026-02-10",
+    "company": "OANDO",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "3",
+    "location": "8'' PIRIGBENEN/OBAMA FLOWLINE AT EPEBU",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.4051222,
+    "lon": 6.4896361,
+    "date": "2026-02-03",
+    "company": "OANDO",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "52.26",
+    "location": "Umuoru 6T Well Head location at Umuoru community, ONELGA, Rivers State.",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.3926667,
+    "lon": 6.2919167,
+    "date": "2026-01-29",
+    "company": "OANDO",
+    "cause": "cor",
+    "contaminant": "cr",
+    "quantity": "15",
+    "location": "24'' Brass River Crossing/Brass pipeline at Kponkponkiri, Nembe LGA Bayelsa State.",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.2683333,
+    "lon": 7.2336111,
+    "date": "2026-01-21",
+    "company": "MPN",
+    "cause": "eqf",
+    "contaminant": "cr",
+    "quantity": "0.078491",
+    "location": "Ubit PP / Mfem DA / OML 67",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.1513611,
+    "lon": 6.5816111,
+    "date": "2026-01-20",
+    "company": "OANDO",
+    "cause": "sab",
+    "contaminant": "other:",
+    "quantity": "0.00",
+    "location": "14\" Oshie-OB/OB Gas pipeline at Ula-Ubie community",
+    "status": "reviewed"
+  },
+  {
+    "lat": 4.4979167,
+    "lon": 6.0724167,
+    "date": "2026-01-16",
+    "company": "OANDO",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "5",
+    "location": "18\" Tebidaba -Brass Pipeline at Oyeregbene in Southern IJaw LGA Bayelsa state",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.559246,
+    "lon": 6.712035,
+    "date": "2026-01-16",
+    "company": "NewCross E&P",
+    "cause": "cor",
+    "contaminant": "no",
+    "quantity": null,
+    "location": "Ekulama 1 flow station, New Town, Opu-Kula.",
+    "status": "reviewed"
+  },
+  {
+    "lat": 5.1005,
+    "lon": 6.4994167,
+    "date": "2026-01-16",
+    "company": "OANDO",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "0.0817",
+    "location": "4\" Oshie 12S Flowline at Oshie community, AWELGA, Rivers State.",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.1005556,
+    "lon": 6.4988889,
+    "date": "2026-01-16",
+    "company": "OANDO",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "0.07168",
+    "location": "4\"Oshie 12S Flowline at Oshie community, AWELGA, Rivers State.",
+    "status": "reviewed"
+  },
+  {
+    "lat": 4.6044444,
+    "lon": 6.3418056,
+    "date": "2026-01-14",
+    "company": "OANDO",
+    "cause": "sab",
+    "contaminant": "no",
+    "quantity": null,
+    "location": "6\" Nembe -Obama P/L@ Akeplai",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.2650686,
+    "lon": 6.6676953,
+    "date": "2026-01-14",
+    "company": "TOTAL",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "0.04",
+    "location": "OB96 FLOWLINE @ EDE COMMUNITY",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.2650556,
+    "lon": 6.5474722,
+    "date": "2026-01-03",
+    "company": "OANDO",
+    "cause": "eqf",
+    "contaminant": "cr",
+    "quantity": "6",
+    "location": "IDU 3SS WELLHEAD AT BISENI",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.2531389,
+    "lon": 6.5080556,
+    "date": "2026-01-09",
+    "company": "OANDO",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "5",
+    "location": "14'' SAMABRI/IDU PIPELINE AT BISENI",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.0998889,
+    "lon": 6.4631667,
+    "date": "2026-01-14",
+    "company": "OANDO",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "0.343",
+    "location": "4'' OSHIE 15S FLOWLINEN@ AKINIMA",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.1006111,
+    "lon": 6.4635833,
+    "date": "2026-01-14",
+    "company": "OANDO",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": null,
+    "location": "4'' OSHIE 15S FLOWLINE @ AKINIMA",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.0995,
+    "lon": 6.4628611,
+    "date": "2026-01-14",
+    "company": "OANDO",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "0.1786",
+    "location": "4'' OSIE/15S FLOWLINE @ AKINIMA",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.80025,
+    "lon": 6.0883611,
+    "date": "2024-12-04",
+    "company": "RENAISSANCE",
+    "cause": "cor",
+    "contaminant": "cr",
+    "quantity": "0.2",
+    "location": "NUN RIVER WELL 15S FLOWLINE AT NUN RIVER",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.142371,
+    "lon": 6.462604,
+    "date": "2024-11-12",
+    "company": "SPDC",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "0.4",
+    "location": "18\" UZERE-RUMUEKPE P/L @ IKARAMA.",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.5289215,
+    "lon": 6.957346,
+    "date": "2024-08-02",
+    "company": "NNPC NEOL",
+    "cause": "ytd",
+    "contaminant": "cr",
+    "quantity": null,
+    "location": "AKASO WELL 4@ KRAKRAMA COMMUNITY",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.4509722,
+    "lon": 6.2650278,
+    "date": "2024-07-12",
+    "company": "NAOC",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "80",
+    "location": "18” Obama-Brass Pipeline at Oni Nembe, Bayelsa State.",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.11568,
+    "lon": 6.49327,
+    "date": "2024-06-17",
+    "company": "SPDC",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "10",
+    "location": "14'' OKORIDA - RUMUEKPE PIPELINE @ AKALA-OLU",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.52759,
+    "lon": 7.24179,
+    "date": "2024-06-05",
+    "company": "SPDC",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "15",
+    "location": "28\"Bomu-Bonny p/l @ freetown",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.59587,
+    "lon": 7.25773,
+    "date": "2024-10-27",
+    "company": "SPDC",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "110",
+    "location": "28\" Bomu - Bonny pipeline@Bodo",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.96768922,
+    "lon": 6.61279071,
+    "date": "2024-10-20",
+    "company": "RENAISSANCE",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "5",
+    "location": "20\"KCTL-Rumuekpe@owerewere",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.6870833,
+    "lon": 7.0188889,
+    "date": "2024-06-02",
+    "company": "NNPCL",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "40",
+    "location": "OML-18, ORUBIRI (ABILA) WELL 7LS.",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.6788333,
+    "lon": 7.2671389,
+    "date": "2026-06-05",
+    "company": "RENAISSANCE",
+    "cause": "other:",
+    "contaminant": "no",
+    "quantity": null,
+    "location": "28'' EBUBU-BONNY TNP @ B-DERE, GOKANA L.G.A",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.6899747,
+    "lon": 6.4669667,
+    "date": "2026-06-20",
+    "company": "Platform",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "5.5",
+    "location": "8'' CRUDE-OIL EXPORT LINE,KM 37 FROM GROUP GATHERING FACILITY TO OANDO KWALE GAS PLANT.",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.19288,
+    "lon": 6.75887,
+    "date": "2025-12-04",
+    "company": "RENAISSANCE",
+    "cause": "ome",
+    "contaminant": "cr",
+    "quantity": "2",
+    "location": "Ahia tie - in manifold",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.1238889,
+    "lon": 6.5732222,
+    "date": "2025-10-23",
+    "company": "OANDO",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "12",
+    "location": "18\" Ebocha-Ogoda Pipeline @Ogoda community, AWELGA, Rivers State.",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.5294444,
+    "lon": 7.0330556,
+    "date": "2025-03-23",
+    "company": "NNPC NEOL",
+    "cause": "other:",
+    "contaminant": "cr",
+    "quantity": "30.2",
+    "location": "CAWRTHORNE CHANNEL 1 AKASO WELL 10",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.0477139,
+    "lon": 6.7025111,
+    "date": "2026-05-11",
+    "company": "RENAISSANCE",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "4",
+    "location": "8\" Mininta BullkLine at Elelele-Alimini.",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.20877,
+    "lon": 6.51754,
+    "date": "2026-05-26",
+    "company": "RENAISSANCE",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "0.4",
+    "location": "6'' BISENI/ADIBAWA BULKLINE AT BISENI",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.4666972,
+    "lon": 6.6988222,
+    "date": "2026-06-25",
+    "company": null,
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "30.27",
+    "location": "14\"Akiri/Ebocha Pipeline @Mbgbede",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.469091,
+    "lon": 7.217472,
+    "date": "2026-06-26",
+    "company": "NEPL",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "5",
+    "location": "OLD ABANDONED WELL-3 AT OTOKOLOMABIE",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.71019,
+    "lon": 7.280131,
+    "date": "2026-06-23",
+    "company": "RENAISSANCE",
+    "cause": "other:",
+    "contaminant": "cr",
+    "quantity": "0.0314",
+    "location": "24\" Ogali - Bonny Pipeline at Kpite , Tai LGA , Rivers State , Nigeira",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.71019,
+    "lon": 7.280131,
+    "date": "2026-06-23",
+    "company": "RENAISSANCE",
+    "cause": "other:Residual oil from past repair",
+    "contaminant": "cr",
+    "quantity": "0.0314",
+    "location": "24\" Ogali - Bonny Pipeline at Kpite , Tai LGA , Rivers State , Nigeira",
+    "status": "invalid"
+  },
+  {
+    "lat": 4.9575,
+    "lon": 7.1851389,
+    "date": "2026-06-22",
+    "company": "NEPL",
+    "cause": "eqf",
+    "contaminant": "cr",
+    "quantity": "45",
+    "location": "12'' IMO-RIVER DELIVERY LINE A AT OWAZA, UKWA-WEST L.G.A.",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.5189833,
+    "lon": 6.0215806,
+    "date": "2026-06-02",
+    "company": "OANDO",
+    "cause": "cor",
+    "contaminant": "cr",
+    "quantity": "1",
+    "location": "Address18” Tebidaba-Brass Pipeline at Babaragbene, Southern-Ijaw, Bayelsa State.",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.0772,
+    "lon": 6.7262,
+    "date": "2026-07-08",
+    "company": "RENAISSANCE",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "4",
+    "location": "4” MINI NTA WELL 2T FLOWLINE @ MININTA, ELELE ALIMINI, EMOHUA WEST LOCAL GOVERNMENT AREA.",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.99854,
+    "lon": 7.02164,
+    "date": "2026-04-15",
+    "company": "Heirs Energies Limited",
+    "cause": "eqf",
+    "contaminant": "cr",
+    "quantity": "1.6",
+    "location": "8'' Umuechem Delivery line at Etche LGA",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.894,
+    "lon": 7.1429819,
+    "date": "2026-03-25",
+    "company": "Heirs Energies Limited",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "0.06",
+    "location": "4'' OBIGBO WELL 6 LIMA FLOWLINE AT UMUEBULU 2, ETCHE L.G.A",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.9841056,
+    "lon": 7.1252861,
+    "date": "2026-01-26",
+    "company": "Heirs Energies Limited",
+    "cause": "eqf",
+    "contaminant": "cr",
+    "quantity": "0.031",
+    "location": "8'' NKALI-IMO RIVER DELIVERY LINE @UMUOKECHI ODAGWA, ETCHE LGA",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.0736083,
+    "lon": 6.7254183,
+    "date": "2025-12-23",
+    "company": "RENAISSANCE",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": null,
+    "location": "MINI NTA WELL 4 FLOWLINE @ MINI NTA - ELELE ALIMINI.",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.6012778,
+    "lon": 6.3011111,
+    "date": "2025-12-19",
+    "company": "OANDO",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "3",
+    "location": "6'' NIMBE SOUTH/OBAMA FLOWLINE AT BURUKIRI",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.0434722,
+    "lon": 6.5905278,
+    "date": "2025-12-02",
+    "company": "RENAISSANCE",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "209.36",
+    "location": "14\" Okordia- Rumuekpe pipeline at ikata",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.8545278,
+    "lon": 7.1555,
+    "date": "2025-11-27",
+    "company": "Heirs Energies Limited",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "6",
+    "location": "6'' OBIGBO-KOMKOM DELIVERY LINE @ KOMKOM.",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.93691,
+    "lon": 6.49214,
+    "date": "2025-11-19",
+    "company": "RENAISSANCE",
+    "cause": "eqf",
+    "contaminant": "cr",
+    "quantity": "1",
+    "location": "20'' KOLOCREEK - RUMUEKPE TRUNCKLINE ODAU RIVERS STATE",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.64866,
+    "lon": 6.63549,
+    "date": "2025-11-10",
+    "company": "RENAISSANCE",
+    "cause": "ome",
+    "contaminant": "cr",
+    "quantity": "3",
+    "location": "3\" SOKU WELL 15L FLOWLINE SOKU",
+    "status": "reviewed"
+  },
+  {
+    "lat": 4.91144,
+    "lon": 6.37389,
+    "date": "2025-10-27",
+    "company": "RENAISSANCE",
+    "cause": "sab",
+    "contaminant": "no",
+    "quantity": null,
+    "location": "20\" KOLO CREEK - RUMUEKPE PIPELINE @ OTUASEGA",
+    "status": "reviewed"
+  },
+  {
+    "lat": 4.9839242,
+    "lon": 7.1667972,
+    "date": "2025-09-27",
+    "company": "Heirs Energies Limited",
+    "cause": "eqf",
+    "contaminant": "cr",
+    "quantity": "24.90",
+    "location": "8'' NAKI, IMO RIVER DELIVERY LINE, UMUDEKPARA",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.6025,
+    "lon": 6.3165278,
+    "date": "2025-07-10",
+    "company": "OANDO",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "10",
+    "location": "6'' NEMBE SOUTH/OBAMA FLOWLINE AT SABATORU",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.4511667,
+    "lon": 6.1885,
+    "date": "2025-06-21",
+    "company": "OANDO",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "5",
+    "location": "18'' TEBIDABA/BRASS PIPELINE MASIONKIRI",
+    "status": "reviewed"
+  },
+  {
+    "lat": 4.5146389,
+    "lon": 6.0285278,
+    "date": "2025-06-20",
+    "company": "OANDO",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "0.32",
+    "location": "18'' TEBIDABA/BRASS PIPELINE AT BEBARAGBENE",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.5710278,
+    "lon": 6.3798889,
+    "date": "2025-06-09",
+    "company": "OANDO",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "1",
+    "location": "24'' OGODA/BRASS PIPELINE AT ERIEAMA",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.601,
+    "lon": 6.296,
+    "date": "2025-05-02",
+    "company": "OANDO",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "5",
+    "location": "6'' NEMBE SOUTH/OBAMA FLOWLINE AT OKOROMA NEMBE",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.5683633,
+    "lon": 6.2723389,
+    "date": "2025-04-29",
+    "company": "OANDO",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "5",
+    "location": "18'' OBAMA/BRASS PIPELINE AT TEREKE",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.4139167,
+    "lon": 6.2451944,
+    "date": "2025-04-25",
+    "company": "OANDO",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "0.0629",
+    "location": "18'' TEBIDABA/BRASS PIPELINE AT ORUKIRI",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.7361111,
+    "lon": 7.3033333,
+    "date": "2025-04-16",
+    "company": "NEPL",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "2",
+    "location": "NEPL OML11 KOROKORO WELL 9, TAI LGA",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.6198889,
+    "lon": 6.2667222,
+    "date": "2025-04-14",
+    "company": "OANDO",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "0.1887",
+    "location": "18'' OBAMA/BRASS PIPELINE AT SOUNKIRI",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.4692222,
+    "lon": 6.1454722,
+    "date": "2025-04-04",
+    "company": "OANDO",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "50",
+    "location": "18'' TEBIDABA/BRASS PIPELINE AT LAGOSGBENE",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.5190278,
+    "lon": 6.2561111,
+    "date": "2025-03-08",
+    "company": "OANDO",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "0.0629",
+    "location": "18'' OBAMA/BRASS PIPELINE AT ADIKIAMA",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.6153333,
+    "lon": 6.3931389,
+    "date": "2025-01-31",
+    "company": "OANDO",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "8",
+    "location": "24'' OGODA/BRASS PIPELINE AT OKOROBA",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.64734789,
+    "lon": 6.75111002,
+    "date": "2026-07-16",
+    "company": "RENAISSANCE",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "0.1",
+    "location": "12\" Oguta - Egbema P/L Umunku, Oguta LGA, Imo State.",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.6006111,
+    "lon": 6.2711389,
+    "date": "2026-07-05",
+    "company": "OANDO",
+    "cause": "cor",
+    "contaminant": "cr",
+    "quantity": "1",
+    "location": "18\" Obama/Brass Pipeline at Okoroma",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.5393611,
+    "lon": 6.5138889,
+    "date": "2026-07-13",
+    "company": "Aiteo E&P",
+    "cause": "ome",
+    "contaminant": "cr",
+    "quantity": "17",
+    "location": "Central Processing facility (CPF) at Nembe Crude Oil Export Terminal.",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.48585,
+    "lon": 6.75494,
+    "date": null,
+    "company": "SPDC",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "97",
+    "location": "16\"Egbema-Assa pipeline @Etekwuru",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.0925278,
+    "lon": 6.5280833,
+    "date": null,
+    "company": "SPDC",
+    "cause": "sab",
+    "contaminant": "no",
+    "quantity": null,
+    "location": "14\"Okordia/Rumuekpe Pipeline at Ukpeliede",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.02301425,
+    "lon": 6.62351794,
+    "date": null,
+    "company": "SPDC",
+    "cause": "sab",
+    "contaminant": "no",
+    "quantity": null,
+    "location": "14'' OKORDIA RUMUEKPE AT EDEOHA, AHOADA",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.2381667,
+    "lon": 6.5319722,
+    "date": "2026-06-28",
+    "company": "RENAISSANCE",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "2",
+    "location": "6'' ADNE BULK LINE AT BISENI, YENAGOA LGA BAYELSA STATE.",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.50827499,
+    "lon": 6.8409983,
+    "date": "2026-07-27",
+    "company": "SEEPCO",
+    "cause": "cor",
+    "contaminant": "cr",
+    "quantity": "10",
+    "location": "6'' AGGU A LOCATION",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.4089278,
+    "lon": 6.5756361,
+    "date": "2026-07-03",
+    "company": "OANDO",
+    "cause": "sab",
+    "contaminant": "co",
+    "quantity": "9",
+    "location": "4'' OBIAFU/OBOB 35s FLOWLINE at Otua community, Omoku in ONELGA, Rivers State.",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.9797889,
+    "lon": 7.1136944,
+    "date": "2026-07-28",
+    "company": "Heirs Energies Limited",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "0.0126",
+    "location": "4\" NKALE WELL 13 FLOWLINE@ODOGWA 1, NKALE ETCHE LGA.",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.61571,
+    "lon": 6.75844,
+    "date": null,
+    "company": "SPDC",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "4",
+    "location": "12'' Oguta-Egbema P/L @Eziorsu Community",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.5423611,
+    "lon": 7.2462222,
+    "date": "2021-03-18",
+    "company": "SPDC",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "0.4",
+    "location": "28\" Bomu-Bonny Pipeline at Owokiri",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.859915,
+    "lon": 7.0644367,
+    "date": "2023-01-03",
+    "company": "SPDC",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": null,
+    "location": "28\"TNP RUMOUKRUSHI -BOMU OBIO/AKPOR LGA, RIVERS STATE.",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.943743,
+    "lon": 6.6535998,
+    "date": "2023-06-14",
+    "company": "SPDC",
+    "cause": "eqf",
+    "contaminant": "cr",
+    "quantity": "10",
+    "location": "6\" Enwe manifold flange@Ozochi ahoda east, Rivers State.",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.9533333,
+    "lon": 6.8449167,
+    "date": "2023-11-10",
+    "company": "SPDC",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "3.5",
+    "location": "20\" Rumuekpe-Nkpoku PL @ Ibaa",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.46527623,
+    "lon": 7.18865472,
+    "date": "2023-10-11",
+    "company": "SPDC",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "1.00",
+    "location": "28\" Bomu-Bonny p/line at Ogbonga forest, Bonny LGA Rivers state",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.6524489,
+    "lon": 7.2770911,
+    "date": "2023-03-01",
+    "company": "SPDC",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "9",
+    "location": "28\" Bomu-Bonny P/L @ Kpor in Gokana LGA Rivers State",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.9703133,
+    "lon": 6.7220286,
+    "date": "2023-07-06",
+    "company": "SPDC",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "66",
+    "location": "20\" Rumuekpe-Nkpoku P/L@ Rumuekpe",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.95411,
+    "lon": 6.82054,
+    "date": "2023-10-22",
+    "company": "SPDC",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "30",
+    "location": "20\"RUMUEKPE- NKPOKU PIPELINE AT IBAA, EMOLGA RIVERS STATE",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.95339,
+    "lon": 6.84278,
+    "date": "2023-10-20",
+    "company": "SPDC",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "5",
+    "location": "20\"RUMUEKPE- NKPOKU PIPELINE AT IBAA EMOLGA RIVERS STATE",
+    "status": "reviewed"
+  },
+  {
+    "lat": 4.95445,
+    "lon": 6.811327,
+    "date": "2023-07-24",
+    "company": "SPDC",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "4",
+    "location": "20\" Rumuekpe-Nkpoku pipeline at Ibaa community.",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.953902,
+    "lon": 6.820454,
+    "date": "2023-03-14",
+    "company": "SPDC",
+    "cause": "sab",
+    "contaminant": "no",
+    "quantity": null,
+    "location": "36\" RUMUEKPE-NKPOKU PIPELINE AT IBAA COMMUNITY. EMOUHA L.G.A. R/S",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.9722225,
+    "lon": 6.8043853,
+    "date": "2023-07-02",
+    "company": "SPDC",
+    "cause": "sab",
+    "contaminant": "no",
+    "quantity": null,
+    "location": "4\" Obelle-Ibaa Delivery Line at Ibaa, Emuoha LGA, Rivers State",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.3594444,
+    "lon": 6.7958056,
+    "date": "2017-05-18",
+    "company": "SPDC",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "7.39",
+    "location": "18\" Assa-Rumuekpe (trunkline) @ oCHIA",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.82631,
+    "lon": 7.29093,
+    "date": "2015-08-31",
+    "company": "SPDC",
+    "cause": "sab",
+    "contaminant": null,
+    "quantity": "12",
+    "location": "8\" afam well 25 flowline.",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.9275847,
+    "lon": 6.4326597,
+    "date": "2026-06-16",
+    "company": "RENAISSANCE",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "224",
+    "location": "20\" Kolocreek-Rumuekpe pipeline @ Odau community, Abua/Odua L.G.A",
+    "status": "reviewed"
+  },
+  {
+    "lat": 5.10825,
+    "lon": 6.6721194,
+    "date": "2026-07-30",
+    "company": "TOTAL",
+    "cause": "eqf",
+    "contaminant": "cr",
+    "quantity": "0.629",
+    "location": "12'' (km 15.5) OBAGI-RUMUEKPE CRUDE OIL EXPORT LINE @ OBIEMERENYI, AHOADA EAST L.G.A",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.8225,
+    "lon": 7.1544444,
+    "date": "2025-04-18",
+    "company": "NEPL",
+    "cause": "eqf",
+    "contaminant": "cr",
+    "quantity": "5.42",
+    "location": "NEPL OML 11, 12\" DELIVERY LINE, OGALE, ELEME",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.9790522,
+    "lon": 7.1872283,
+    "date": "2026-07-27",
+    "company": "NEPL",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "0.2",
+    "location": "IMO-RIVERS WELL 65T FLOWLINE AT OWAZA, UKWA WEST L.G.A ABIA STATE",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.5516944,
+    "lon": 7.0486389,
+    "date": "2025-02-19",
+    "company": "NNPC NEOL",
+    "cause": "eqf",
+    "contaminant": "cr",
+    "quantity": "1000",
+    "location": "CAWC-1 BARGING PROCESS AREA",
+    "status": "reviewed"
+  },
+  {
+    "lat": 4.97207791,
+    "lon": 6.65108591,
+    "date": "2023-07-07",
+    "company": "SPDC",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "220",
+    "location": "20\" Kolo Creek Rumuekpe Pipeline Okoma ahoda east rivers state.",
+    "status": "reviewed"
+  },
+  {
+    "lat": 4.6651,
+    "lon": 7.27775,
+    "date": "2023-10-20",
+    "company": "SPDC",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "6",
+    "location": "28 inch nkpoku bomu pipeline at k-dere gokana local government area rivers state",
+    "status": "reviewed"
+  },
+  {
+    "lat": 5.4169056,
+    "lon": 6.6918083,
+    "date": "2026-08-02",
+    "company": "Oando Energy Resources Nigeria Limited",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "0.0094",
+    "location": "18\" Ebocha-Ogoda Pipeline @ Mgbede Community, ONELGA, Rivers State",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.7523,
+    "lon": 6.10277,
+    "date": "2026-08-23",
+    "company": "SPDC",
+    "cause": "sab",
+    "contaminant": "cr",
+    "quantity": "88",
+    "location": "10” Diebu Creek-Nun River Delivery Line Right of Way at Eniwari Yenagoa, Bayelsa State",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.4008333,
+    "lon": 6.6266667,
+    "date": "2026-07-29",
+    "company": "OANDO",
+    "cause": "cor",
+    "contaminant": "cr",
+    "quantity": "0.322",
+    "location": "10”0bob-Ebocha Pipeline at old Obrikom Flowstation, Omoku Community Onelga.",
+    "status": "confirmed"
+  },
+  {
+    "lat": 5.4525583,
+    "lon": 6.8535583,
+    "date": "2025-09-18",
+    "company": "SEPLAT",
+    "cause": "ome",
+    "contaminant": "drilling mud",
+    "quantity": "60",
+    "location": "OHAJI SOUTH WELL 10",
+    "status": "confirmed"
+  },
+  {
+    "lat": 4.81175,
+    "lon": 7.1527,
+    "date": "2025-09-16",
+    "company": "SPDC",
+    "cause": "ome",
+    "contaminant": "cr",
+    "quantity": "18",
+    "location": "Ogale-Manifold",
     "status": "confirmed"
   }
 ]

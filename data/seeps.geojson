@@ -1,0 +1,305 @@
+{
+"type": "FeatureCollection",
+"features": [
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+6.88116,
+4.58047
+]
+},
+"properties": {
+"name": "Oruama Kuba Point 2",
+"first": false,
+"source": "SOMO brief map, georeferenced by hand (approx. 200 m)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+6.87873,
+4.58013
+]
+},
+"properties": {
+"name": "Okuramakubu Point 1",
+"first": false,
+"source": "SOMO brief map, georeferenced by hand (approx. 200 m)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+6.87884,
+4.58001
+]
+},
+"properties": {
+"name": "Okuramakubu Point 1",
+"first": false,
+"source": "SOMO brief map, georeferenced by hand (approx. 200 m)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+6.88314,
+4.57977
+]
+},
+"properties": {
+"name": "Opu Abekere",
+"first": false,
+"source": "SOMO brief map, georeferenced by hand (approx. 200 m)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+6.88225,
+4.5791
+]
+},
+"properties": {
+"name": "Opu Sira (north)",
+"first": false,
+"source": "SOMO brief map, georeferenced by hand (approx. 200 m)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+6.88163,
+4.57731
+]
+},
+"properties": {
+"name": "Opu Dah Point 1",
+"first": false,
+"source": "SOMO brief map, georeferenced by hand (approx. 200 m)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+6.8818,
+4.57667
+]
+},
+"properties": {
+"name": "Opu Asa Compound",
+"first": false,
+"source": "SOMO brief map, georeferenced by hand (approx. 200 m)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+6.88716,
+4.57658
+]
+},
+"properties": {
+"name": "Iwoama Point 2",
+"first": false,
+"source": "SOMO brief map, georeferenced by hand (approx. 200 m)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+6.88462,
+4.57627
+]
+},
+"properties": {
+"name": "Iwoama compound point 1",
+"first": false,
+"source": "SOMO brief map, georeferenced by hand (approx. 200 m)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+6.88417,
+4.576
+]
+},
+"properties": {
+"name": "Iwoama compound point 5",
+"first": false,
+"source": "SOMO brief map, georeferenced by hand (approx. 200 m)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+6.88389,
+4.57591
+]
+},
+"properties": {
+"name": "Iwoama compound point 5",
+"first": false,
+"source": "SOMO brief map, georeferenced by hand (approx. 200 m)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+6.8878,
+4.57591
+]
+},
+"properties": {
+"name": "Iwoama Point 3",
+"first": false,
+"source": "SOMO brief map, georeferenced by hand (approx. 200 m)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+6.88459,
+4.57588
+]
+},
+"properties": {
+"name": "Iwoama compound point 1",
+"first": false,
+"source": "SOMO brief map, georeferenced by hand (approx. 200 m)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+6.88409,
+4.57585
+]
+},
+"properties": {
+"name": "Iwoama compound point 5",
+"first": false,
+"source": "SOMO brief map, georeferenced by hand (approx. 200 m)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+6.88169,
+4.57548
+]
+},
+"properties": {
+"name": "Opu Ibi-ila Compound",
+"first": false,
+"source": "SOMO brief map, georeferenced by hand (approx. 200 m)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+6.88691,
+4.57542
+]
+},
+"properties": {
+"name": "Opu Imo Point 5",
+"first": false,
+"source": "SOMO brief map, georeferenced by hand (approx. 200 m)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+6.88442,
+4.57494
+]
+},
+"properties": {
+"name": "Opu Imo Point 6",
+"first": false,
+"source": "SOMO brief map, georeferenced by hand (approx. 200 m)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+6.8842,
+4.57479
+]
+},
+"properties": {
+"name": "Opu Sira",
+"first": false,
+"source": "SOMO brief map, georeferenced by hand (approx. 200 m)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+6.88827,
+4.57309
+]
+},
+"properties": {
+"name": "Iwoama compound point 4",
+"first": false,
+"source": "SOMO brief map, georeferenced by hand (approx. 200 m)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+6.8873,
+4.57035
+]
+},
+"properties": {
+"name": "Opu Osia",
+"first": true,
+"source": "SOMO brief map, georeferenced by hand (approx. 200 m)"
+}
+}
+]
+}
