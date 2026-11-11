@@ -23,6 +23,6 @@ COPY (
 COPY (
   SELECT provider, id, date, lat, lon, rate_kg_h, satellite
   FROM read_parquet(['s3://data-desk-archive/carbon-mapper/detections/**/data.parquet', 's3://data-desk-archive/imeo/detections/**/data.parquet',
-                     's3://data-desk-archive/sron/detections/**/data.parquet', 's3://data-desk-archive/nature-trace/detections/**/data.parquet'], union_by_name = true)
+                     's3://data-desk-archive/sron/detections/**/data.parquet', 's3://data-desk-archive/google/detections/**/data.parquet'], union_by_name = true)
   WHERE kind = 'plume' AND lat BETWEEN 4.0 AND 5.2 AND lon BETWEEN 6.2 AND 7.6
 ) TO 'data/plumes.parquet';
